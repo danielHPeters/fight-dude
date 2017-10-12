@@ -15,14 +15,14 @@ public:
   ~GameObjectManager();
 
   void add(std::string name, GameObject *gameObject);
-
+y
   void remove(std::string name);
 
-  GameObject* get(std::string name) const;
+  GameObject *get(std::string name) const;
 
   int getObjectCount() const;
 
-  void drawAll(sf::RenderWindow renderWindow);
+  void drawAll(sf::RenderWindow &renderWindow);
 
 private:
   std::map<std::string, GameObject *> gameObjects;

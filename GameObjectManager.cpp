@@ -33,7 +33,7 @@ int GameObjectManager::getObjectCount() const {
   return (int) gameObjects.size();
 }
 
-void GameObjectManager::drawAll(sf::RenderWindow renderWindow) {
+void GameObjectManager::drawAll(sf::RenderWindow &renderWindow) {
   std::map<std::string, GameObject *>::const_iterator iterator = gameObjects.begin();
 
   while (iterator != gameObjects.end()) {

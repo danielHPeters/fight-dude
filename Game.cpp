@@ -8,7 +8,6 @@
 
 Game::Game() {
   gameState = Game::UNINITIALIZED;
-  mainWindow;
   gameObjectManager;
 }
 

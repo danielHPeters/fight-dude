@@ -16,7 +16,13 @@ public:
 
   virtual void load(std::string filename);
   virtual void draw(sf::RenderWindow &window);
+  virtual void update(float elapsedTime);
+  virtual sf::Vector2f getPosition() const;
   virtual void setPosition(sf::Vector2f position);
+  virtual bool isLoaded() const;
+
+protected:
+  sf::Sprite& getSprite();
 
 private:
   sf::Texture texture;

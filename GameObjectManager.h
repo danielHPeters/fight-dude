@@ -15,7 +15,7 @@ public:
   ~GameObjectManager();
 
   void add(std::string name, GameObject *gameObject);
-y
+
   void remove(std::string name);
 
   GameObject *get(std::string name) const;

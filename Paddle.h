@@ -12,6 +12,15 @@ class Paddle : public GameObject {
 public:
   Paddle();
   ~Paddle();
+
+  void draw(sf::RenderWindow &renderWindow);
+  void update(float elapsedTime);
+
+  float getVelocity() const;
+
+private:
+  float velocity;
+  float maxVelocity;
 };
 
 

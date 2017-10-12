@@ -18,7 +18,7 @@ void Game::start() {
   mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
 
   Paddle * player1 = new Paddle();
-  player1->load("assets/game-objects/paddle.png");
+  //player1->load("assets/game-objects/paddle.png");
   player1->setPosition(sf::Vector2<float>((1024 / 2) - 45, 700));
 
   gameObjectManager.add("paddle1", player1);

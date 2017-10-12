@@ -28,6 +28,22 @@ void GameObject::draw(sf::RenderWindow &window) {
   }
 }
 
+void GameObject::update(float elapsedTime) {
+
+}
+
+sf::Vector2f GameObject::getPosition() const {
+  return loaded ? sprite.getPosition() : sf::Vector2f();
+}
+
+sf::Sprite &GameObject::getSprite() {
+  return sprite;
+}
+
+bool GameObject::isLoaded() const {
+  return loaded;
+}
+
 void GameObject::setPosition(sf::Vector2f position) {
   if (loaded) {
     sprite.setPosition(position);

@@ -18,7 +18,7 @@ void SplashScreen::show(sf::RenderWindow &window) {
 
   sf::Event event;
 
-  while (true) {
+  while (window.isOpen()) {
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::EventType::KeyPressed
           || event.type == sf::Event::EventType::MouseButtonPressed

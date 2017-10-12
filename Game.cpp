@@ -6,9 +6,10 @@
 #include "SplashScreen.h"
 #include "MainMenu.h"
 
-Game::Game(){
+Game::Game() {
   gameState = Game::UNINITIALIZED;
-  sf::RenderWindow mainWindow;
+  mainWindow;
+  gameObjectManager;
 }
 
 void Game::start() {
@@ -16,6 +17,13 @@ void Game::start() {
     return;
   }
   mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
+
+  Paddle * player1 = new Paddle();
+  player1->load("assets/game-objects/paddle.png");
+  player1->setPosition(sf::Vector2<float>((1024 / 2) - 45, 700));
+
+  gameObjectManager.add("paddle1", player1);
+
   gameState = Game::SHOWING_SPLASH;
 
   while (!isExiting()) {
@@ -30,25 +38,26 @@ bool Game::isExiting() {
 
 void Game::gameLoop() {
   switch (gameState) {
-      case Game::SHOWING_MENU: {
+    case Game::SHOWING_MENU: {
       showMenu();
       break;
     }
-      case Game::SHOWING_SPLASH: {
+    case Game::SHOWING_SPLASH: {
       showSplashScreen();
       break;
     }
-      case Game::PLAYING: {
+    case Game::PLAYING: {
       sf::Event currentEvent;
 
-      while(mainWindow.pollEvent(currentEvent)) {
+      while (mainWindow.pollEvent(currentEvent)) {
         mainWindow.clear(sf::Color(0, 0, 0));
+        gameObjectManager.drawAll(mainWindow);
         mainWindow.display();
         if (currentEvent.type == sf::Event::Closed) {
           gameState = Game::EXITING;
         }
-        if (currentEvent.type == sf::Event::KeyPressed){
-          if(currentEvent.key.code == sf::Keyboard::Escape){
+        if (currentEvent.type == sf::Event::KeyPressed) {
+          if (currentEvent.key.code == sf::Keyboard::Escape) {
             showMenu();
           }
         }
@@ -71,16 +80,16 @@ void Game::showMenu() {
   MainMenu mainMenu;
   MainMenu::MenuResult result = mainMenu.show(mainWindow);
 
-  switch (result){
-    case MainMenu::EXIT:{
+  switch (result) {
+    case MainMenu::EXIT: {
       gameState = Game::EXITING;
       break;
     }
-    case MainMenu::PLAY:{
+    case MainMenu::PLAY: {
       gameState = Game::PLAYING;
       break;
     }
-    default:{
+    default: {
       break;
     }
   }

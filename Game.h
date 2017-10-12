@@ -7,6 +7,8 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "Paddle.h"
+#include "GameObjectManager.h"
 
 
 class Game {
@@ -29,6 +31,7 @@ private:
   };
   GameState gameState;
   sf::RenderWindow mainWindow;
+  GameObjectManager gameObjectManager;
 };
 
 

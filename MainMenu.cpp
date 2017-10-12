@@ -49,7 +49,7 @@ MainMenu::MenuResult MainMenu::handleClick(int x, int y) {
 MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow &window) {
   sf::Event menuEvent;
 
-  while(true) {
+  while(window.isOpen()) {
     while (window.pollEvent(menuEvent)) {
       if (menuEvent.type == sf::Event::MouseButtonPressed) {
         return handleClick(menuEvent.mouseButton.x, menuEvent.mouseButton.y);

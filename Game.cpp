@@ -6,12 +6,17 @@
 #include "SplashScreen.h"
 #include "MainMenu.h"
 
+Game::Game(){
+  gameState = Game::UNINITIALIZED;
+  sf::RenderWindow mainWindow;
+}
+
 void Game::start() {
-  if (gameState != UNINITIALIZED) {
+  if (gameState != Game::UNINITIALIZED) {
     return;
   }
   mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
-  gameState = SHOWINGSPLASH;
+  gameState = Game::SHOWING_SPLASH;
 
   while (!isExiting()) {
     gameLoop();
@@ -20,27 +25,27 @@ void Game::start() {
 }
 
 bool Game::isExiting() {
-  return gameState == EXITING;
+  return gameState == Game::EXITING;
 }
 
 void Game::gameLoop() {
   switch (gameState) {
-    case SHOWINGMENU: {
+      case Game::SHOWING_MENU: {
       showMenu();
       break;
     }
-    case SHOWINGSPLASH: {
+      case Game::SHOWING_SPLASH: {
       showSplashScreen();
       break;
     }
-    case PLAYING: {
+      case Game::PLAYING: {
       sf::Event currentEvent;
 
       while(mainWindow.pollEvent(currentEvent)) {
         mainWindow.clear(sf::Color(0, 0, 0));
         mainWindow.display();
         if (currentEvent.type == sf::Event::Closed) {
-          gameState = EXITING;
+          gameState = Game::EXITING;
         }
         if (currentEvent.type == sf::Event::KeyPressed){
           if(currentEvent.key.code == sf::Keyboard::Escape){
@@ -59,7 +64,7 @@ void Game::gameLoop() {
 void Game::showSplashScreen() {
   SplashScreen splashScreen;
   splashScreen.show(mainWindow);
-  gameState = SHOWINGMENU;
+  gameState = Game::SHOWING_MENU;
 }
 
 void Game::showMenu() {
@@ -68,11 +73,11 @@ void Game::showMenu() {
 
   switch (result){
     case MainMenu::EXIT:{
-      gameState = EXITING;
+      gameState = Game::EXITING;
       break;
     }
     case MainMenu::PLAY:{
-      gameState = PLAYING;
+      gameState = Game::PLAYING;
       break;
     }
     default:{
@@ -80,6 +85,3 @@ void Game::showMenu() {
     }
   }
 }
-
-Game::GameState Game::gameState = UNINITIALIZED;
-sf::RenderWindow Game::mainWindow;

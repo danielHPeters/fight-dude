@@ -11,20 +11,24 @@
 
 class Game {
 public:
-  static void start();
+  void start();
+
+  Game();
 
 private:
-  static bool isExiting();
+  bool isExiting();
 
-  static void gameLoop();
-  static void showSplashScreen();
-  static void showMenu();
+  void gameLoop();
+
+  void showSplashScreen();
+
+  void showMenu();
 
   enum GameState {
-    UNINITIALIZED, SHOWINGSPLASH, PAUSED, SHOWINGMENU, PLAYING, EXITING
+    UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
   };
-  static GameState gameState;
-  static sf::RenderWindow mainWindow;
+  GameState gameState;
+  sf::RenderWindow mainWindow;
 };
 
 

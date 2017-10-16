@@ -5,10 +5,14 @@
 #include "Game.h"
 #include "SplashScreen.h"
 #include "MainMenu.h"
+#include "Ball.h"
 
 Game::Game() {
   gameState = Game::UNINITIALIZED;
-  gameObjectManager;
+}
+
+Game::~Game() {
+
 }
 
 void Game::start() {
@@ -17,10 +21,12 @@ void Game::start() {
   }
   mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
 
-  Paddle * player1 = new Paddle();
-  //player1->load("assets/game-objects/paddle.png");
-  player1->setPosition(sf::Vector2<float>((1024 / 2) - 45, 700));
+  auto *ball = new Ball();
+  auto *player1 = new Paddle();
+  player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
+  ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
 
+  gameObjectManager.add("ball", ball);
   gameObjectManager.add("paddle1", player1);
 
   gameState = Game::SHOWING_SPLASH;
@@ -46,11 +52,12 @@ void Game::gameLoop() {
       break;
     }
     case Game::PLAYING: {
-      sf::Event currentEvent;
+      sf::Event currentEvent{};
 
       while (mainWindow.pollEvent(currentEvent)) {
         mainWindow.clear(sf::Color(0, 0, 0));
         gameObjectManager.drawAll(mainWindow);
+        gameObjectManager.updateAll();
         mainWindow.display();
         if (currentEvent.type == sf::Event::Closed) {
           gameState = Game::EXITING;
@@ -92,4 +99,12 @@ void Game::showMenu() {
       break;
     }
   }
+}
+
+InputManager Game::getInputManager() {
+  return inputManager;
+}
+
+sf::RenderWindow &Game::getWindow() {
+  return mainWindow;
 }

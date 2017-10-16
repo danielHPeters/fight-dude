@@ -7,14 +7,10 @@
 
 
 #include "Input.h"
-#include "Draw.h"
-#include "Update.h"
 
 class Engine {
 private:
   Input input;
-  Draw draw;
-  Update update;
 public:
   void start();
 };

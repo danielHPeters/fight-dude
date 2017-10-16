@@ -7,6 +7,7 @@
 
 
 #include "GameObject.h"
+#include <SFML/Window.hpp>
 
 class Paddle : public GameObject {
 public:

@@ -7,6 +7,7 @@
 
 #include "GameObject.h"
 #include <stdlib.h>
+#include <SFML/System.hpp>
 
 class GameObjectManager {
 public:
@@ -24,8 +25,11 @@ public:
 
   void drawAll(sf::RenderWindow &renderWindow);
 
+  void updateAll();
+
 private:
   std::map<std::string, GameObject *> gameObjects;
+  sf::Clock clock;
 
   struct GameObjectDeallocator {
     void operator()(const std::pair<std::string, GameObject *> &p) const {

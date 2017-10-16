@@ -4,7 +4,7 @@
 
 #include "GameObjectManager.h"
 
-GameObjectManager::GameObjectManager() {
+GameObjectManager::GameObjectManager() : clock() {
 
 }
 
@@ -26,7 +26,7 @@ void GameObjectManager::remove(std::string name) {
 
 GameObject *GameObjectManager::get(std::string name) const {
   auto results = gameObjects.find(name);
-  return results == gameObjects.end() ? NULL : results->second;
+  return results == gameObjects.end() ? nullptr : results->second;
 }
 
 int GameObjectManager::getObjectCount() const {
@@ -40,4 +40,16 @@ void GameObjectManager::drawAll(sf::RenderWindow &renderWindow) {
     iterator->second->draw(renderWindow);
     iterator++;
   }
+}
+
+void GameObjectManager::updateAll() {
+  std::map<std::string, GameObject *>::const_iterator iterator = gameObjects.begin();
+
+  float elapsedTime = clock.getElapsedTime().asSeconds();
+
+  while (iterator != gameObjects.end()) {
+    iterator->second->update(elapsedTime);
+    iterator++;
+  }
+  clock.restart();
 }

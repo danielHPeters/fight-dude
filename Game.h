@@ -9,6 +9,7 @@
 #include <SFML/Graphics.hpp>
 #include "Paddle.h"
 #include "GameObjectManager.h"
+#include "InputManager.h"
 
 
 class Game {
@@ -17,7 +18,22 @@ public:
 
   Game();
 
+  ~Game();
+
+  InputManager getInputManager();
+
+  sf::RenderWindow &getWindow();
+
 private:
+  enum GameState {
+    UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
+  };
+
+  GameState gameState;
+  sf::RenderWindow mainWindow;
+  GameObjectManager gameObjectManager;
+  InputManager inputManager;
+
   bool isExiting();
 
   void gameLoop();
@@ -25,13 +41,6 @@ private:
   void showSplashScreen();
 
   void showMenu();
-
-  enum GameState {
-    UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
-  };
-  GameState gameState;
-  sf::RenderWindow mainWindow;
-  GameObjectManager gameObjectManager;
 };
 
 

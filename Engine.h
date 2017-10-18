@@ -13,6 +13,7 @@ private:
   Input input;
 public:
   void start();
+  void update();
 };
 
 

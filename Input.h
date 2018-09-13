@@ -1,14 +1,12 @@
-//
-// Created by daniel on 11.10.17.
-//
-
 #ifndef FIGHT_DUDE_INPUT_H
 #define FIGHT_DUDE_INPUT_H
 
-
-class Input {
-
-};
-
+/**
+ * Game input class.
+ *
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @version 1.0
+ */
+class Input {};
 
 #endif //FIGHT_DUDE_INPUT_H

@@ -1,7 +1,3 @@
-//
-// Created by daniel on 11.10.17.
-//
-
 #ifndef FIGHT_DUDE_GAME_H
 #define FIGHT_DUDE_GAME_H
 
@@ -11,20 +7,21 @@
 #include "GameObjectManager.h"
 #include "InputManager.h"
 
-
+/**
+ * Main game class.
+ *
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @version 1.0
+ */
 class Game {
-public:
+ public:
   void start();
-
   Game();
-
   ~Game();
-
   InputManager getInputManager();
-
   sf::RenderWindow &getWindow();
 
-private:
+ private:
   enum GameState {
     UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
   };
@@ -35,13 +32,9 @@ private:
   InputManager inputManager;
 
   bool isExiting();
-
   void gameLoop();
-
   void showSplashScreen();
-
   void showMenu();
 };
-
 
 #endif //FIGHT_DUDE_GAME_H

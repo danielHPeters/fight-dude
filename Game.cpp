@@ -1,7 +1,3 @@
-//
-// Created by daniel on 11.10.17.
-//
-
 #include "Game.h"
 #include "SplashScreen.h"
 #include "MainMenu.h"
@@ -11,9 +7,7 @@ Game::Game() {
   gameState = Game::UNINITIALIZED;
 }
 
-Game::~Game() {
-
-}
+Game::~Game() = default;
 
 void Game::start() {
   if (gameState != Game::UNINITIALIZED) {

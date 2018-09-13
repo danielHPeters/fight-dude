@@ -5,24 +5,27 @@
 #ifndef FIGHT_DUDE_PADDLE_H
 #define FIGHT_DUDE_PADDLE_H
 
-
 #include "GameObject.h"
 #include <SFML/Window.hpp>
 
+/**
+ * Player paddle class.
+ *
+ * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @version 1.0
+ */
 class Paddle : public GameObject {
-public:
+ public:
   Paddle();
-  ~Paddle();
+  ~Paddle() override;
 
-  void draw(sf::RenderWindow &renderWindow);
-  void update(float elapsedTime);
-
+  void draw(sf::RenderWindow &renderWindow) override;
+  void update(float elapsedTime) override;
   float getVelocity() const;
 
-private:
+ private:
   float velocity;
   float maxVelocity;
 };
-
 
 #endif //FIGHT_DUDE_PADDLE_H

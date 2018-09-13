@@ -1,7 +1,3 @@
-//
-// Created by daniel on 11.10.17.
-//
-
 #include "SplashScreen.h"
 
 void SplashScreen::show(sf::RenderWindow &window) {
@@ -16,7 +12,7 @@ void SplashScreen::show(sf::RenderWindow &window) {
   window.draw(sprite);
   window.display();
 
-  sf::Event event;
+  sf::Event event{};
 
   while (window.isOpen()) {
     while (window.pollEvent(event)) {

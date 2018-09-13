@@ -1,15 +1,8 @@
-//
-// Created by daniel on 12.10.17.
-//
-
 #include "GameObject.h"
 
-GameObject::GameObject() : loaded(false) {
-}
+GameObject::GameObject() : loaded(false) {}
 
-GameObject::~GameObject() {
-
-}
+GameObject::~GameObject() = default;
 
 void GameObject::load(std::string filename) {
   if (!texture.loadFromFile(filename)) {
@@ -28,9 +21,7 @@ void GameObject::draw(sf::RenderWindow &window) {
   }
 }
 
-void GameObject::update(float elapsedTime) {
-
-}
+void GameObject::update(float elapsedTime) {}
 
 sf::Vector2f GameObject::getPosition() const {
   return loaded ? sprite.getPosition() : sf::Vector2f();

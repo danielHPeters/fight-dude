@@ -1,20 +1,14 @@
-//
-// Created by daniel on 12.10.17.
-//
-
 #include <cassert>
 #include <iostream>
 #include "Paddle.h"
 
-Paddle::Paddle() : velocity(0.0f), maxVelocity(600.0f){
+Paddle::Paddle() : velocity(0.0f), maxVelocity(600.0f) {
   load("assets/game-objects/paddle.png");
   assert(isLoaded());
   getSprite().setOrigin(getSprite().getGlobalBounds().width / 2, getSprite().getGlobalBounds().height / 2);
 }
 
-Paddle::~Paddle() {
-
-}
+Paddle::~Paddle() = default;
 
 void Paddle::draw(sf::RenderWindow &renderWindow) {
   GameObject::draw(renderWindow);
@@ -41,8 +35,8 @@ void Paddle::update(float elapsedTime) {
 
   sf::Vector2f position = this->getPosition();
 
-  bool left =  position.x < (getSprite().getGlobalBounds().width / 2.0f);
-  bool right = position.x >(1024.0f - getSprite().getGlobalBounds().width / 2.0f);
+  bool left = position.x < (getSprite().getGlobalBounds().width / 2.0f);
+  bool right = position.x > (1024.0f - getSprite().getGlobalBounds().width / 2.0f);
 
   if (left || right) {
     velocity = -velocity;

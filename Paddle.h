@@ -5,7 +5,7 @@
 #ifndef FIGHT_DUDE_PADDLE_H
 #define FIGHT_DUDE_PADDLE_H
 
-#include "GameObject.h"
+#include "GameEntity.h"
 #include <SFML/Window.hpp>
 
 /**
@@ -14,7 +14,7 @@
  * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
-class Paddle : public GameObject {
+class Paddle : public GameEntity {
  public:
   Paddle();
   ~Paddle() override;

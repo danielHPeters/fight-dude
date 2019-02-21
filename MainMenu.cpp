@@ -2,7 +2,7 @@
 
 MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window) {
   sf::Texture texture;
-  texture.loadFromFile("assets/menu/main-menu.png");
+  texture.loadFromFile("./../assets/menu/main-menu.png");
   sf::Sprite sprite(texture);
 
   MenuItem playButton(MainMenu::PLAY);

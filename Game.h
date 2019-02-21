@@ -4,7 +4,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "Paddle.h"
-#include "GameObjectManager.h"
+#include "ObjectManager.h"
 #include "InputManager.h"
 
 /**
@@ -28,7 +28,7 @@ class Game {
 
   GameState gameState;
   sf::RenderWindow mainWindow;
-  GameObjectManager gameObjectManager;
+  ObjectManager gameObjectManager;
   InputManager inputManager;
 
   bool isExiting();

@@ -1,7 +1,7 @@
 #ifndef FIGHT_DUDE_BALL_H
 #define FIGHT_DUDE_BALL_H
 
-#include "GameObject.h"
+#include "GameEntity.h"
 
 /**
  * Ball GameObject class.
@@ -9,7 +9,7 @@
  * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
-class Ball : public GameObject {
+class Ball : public GameEntity {
  public:
   Ball();
   ~Ball() override;

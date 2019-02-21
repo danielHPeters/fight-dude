@@ -1,5 +1,5 @@
-#ifndef FIGHT_DUDE_GAMEOBJECT_H
-#define FIGHT_DUDE_GAMEOBJECT_H
+#ifndef FIGHT_DUDE_GAMEENTITY_H
+#define FIGHT_DUDE_GAMEENTITY_H
 
 #include <string>
 #include <SFML/Graphics.hpp>
@@ -11,11 +11,11 @@
  * @author Daniel Peters <daniel.peters.ch@gmail.com>
  * @version 1.0
  */
-class GameObject {
+class GameEntity {
  public:
-  GameObject();
-  virtual ~GameObject();
-  virtual void load(std::string filename);
+  GameEntity();
+  virtual ~GameEntity();
+  virtual void load(const std::string &filename);
   virtual void draw(sf::RenderWindow &window);
   virtual void update(float elapsedTime);
   virtual sf::Vector2f getPosition() const;
@@ -32,4 +32,4 @@ class GameObject {
   bool loaded;
 };
 
-#endif //FIGHT_DUDE_GAMEOBJECT_H
+#endif //FIGHT_DUDE_GAMEENTITY_H

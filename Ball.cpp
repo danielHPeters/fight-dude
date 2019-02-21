@@ -2,7 +2,7 @@
 #include "Ball.h"
 
 Ball::Ball() {
-  load("assets/game-objects/ball.png");
+  load("./../assets/game-objects/ball.png");
   assert(isLoaded());
   getSprite().setOrigin(0, 0);
 }

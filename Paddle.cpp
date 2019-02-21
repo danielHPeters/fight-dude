@@ -3,7 +3,7 @@
 #include "Paddle.h"
 
 Paddle::Paddle() : velocity(0.0f), maxVelocity(600.0f) {
-  load("assets/game-objects/paddle.png");
+  load("./../assets/game-objects/paddle.png");
   assert(isLoaded());
   getSprite().setOrigin(getSprite().getGlobalBounds().width / 2, getSprite().getGlobalBounds().height / 2);
 }
@@ -11,7 +11,7 @@ Paddle::Paddle() : velocity(0.0f), maxVelocity(600.0f) {
 Paddle::~Paddle() = default;
 
 void Paddle::draw(sf::RenderWindow &renderWindow) {
-  GameObject::draw(renderWindow);
+  GameEntity::draw(renderWindow);
 }
 
 void Paddle::update(float elapsedTime) {

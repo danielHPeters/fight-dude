@@ -2,7 +2,7 @@
 
 void SplashScreen::show(sf::RenderWindow &window) {
   sf::Texture texture;
-  if (!texture.loadFromFile("assets/menu/splash-screen.png")) {
+  if (!texture.loadFromFile("./../assets/menu/splash-screen.png")) {
     return;
   }
   texture.setSmooth(true);

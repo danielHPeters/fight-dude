@@ -8,9 +8,7 @@ namespace fightdude {
  * @param name
  * @param description
  */
-Entity::Entity(std::string id, std::string name, std::string description)
-    : id(std::move(id)), name(std::move(name)), description(std::move(description)) {
-}
+Entity::Entity(std::string id) : id(std::move(id)) {}
 
 /**
  * Destructor.
@@ -24,23 +22,5 @@ Entity::~Entity() = default;
  */
 std::string Entity::getId() {
   return id;
-}
-
-/**
- * Get name of entity.
- *
- * @return
- */
-std::string Entity::getName() {
-  return name;
-}
-
-/**
- * Get description of entity.
- *
- * @return
- */
-std::string Entity::getDescription() {
-  return description;
 }
 } // namespace fightdude

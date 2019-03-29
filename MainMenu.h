@@ -1,9 +1,9 @@
 #ifndef FIGHT_DUDE_MAINMENU_H
 #define FIGHT_DUDE_MAINMENU_H
 
+#include <list>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include <list>
 
 namespace fightdude {
 /**

@@ -16,16 +16,16 @@ namespace fightdude {
  */
 class Game {
  public:
-  void start();
-  Game();
-  ~Game();
-  InputManager getInputManager();
-  sf::RenderWindow &getWindow();
-
- private:
   enum State {
     UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
   };
+
+  Game();
+  ~Game();
+
+  void start();
+  InputManager getInputManager();
+  sf::RenderWindow &getWindow();
 
   Game::State gameState;
   sf::RenderWindow mainWindow;

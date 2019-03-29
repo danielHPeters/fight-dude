@@ -5,7 +5,7 @@
 
 namespace fightdude {
 Game::Game() {
-  gameState = Game::UNINITIALIZED;
+  gameState = Game::State::UNINITIALIZED;
 }
 
 Game::~Game() = default;
@@ -16,12 +16,11 @@ void Game::start() {
 
     auto *ball = new Ball("1", "./../assets/game-objects/ball.png");
     auto *player1 = new Paddle("2", "./../assets/game-objects/paddle.png");
+
     player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
     ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
-
     gameObjectManager.add("ball", ball);
     gameObjectManager.add("paddle1", player1);
-
     gameState = Game::State::SHOWING_SPLASH;
 
     while (!isExiting()) {

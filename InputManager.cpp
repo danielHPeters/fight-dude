@@ -2,6 +2,16 @@
 
 namespace fightdude {
 /**
+ * Constructor.
+ */
+InputManager::InputManager() = default;
+
+/**
+ * Destructor.
+ */
+InputManager::~InputManager() = default;
+
+/**
  *
  * @return
  */

@@ -1,9 +1,12 @@
 #ifndef FIGHT_DUDE_ENTITYMANAGER_H
 #define FIGHT_DUDE_ENTITYMANAGER_H
 
-#include <stdlib.h>
+#include <utility>
+#include <map>
+#include <string>
 #include <SFML/System.hpp>
 #include "GameEntity.h"
+
 
 namespace fightdude {
 /**

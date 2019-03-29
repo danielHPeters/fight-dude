@@ -12,6 +12,9 @@ namespace fightdude {
  */
 class InputManager {
  public:
+  InputManager();
+  ~InputManager();
+
   sf::Keyboard &getKeyboard();
   sf::Mouse &getMouse();
 

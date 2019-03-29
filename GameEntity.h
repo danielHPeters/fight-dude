@@ -16,6 +16,7 @@ class GameEntity {
  public:
   explicit GameEntity(std::string id, std::string fileName);
   virtual ~GameEntity();
+
   virtual void load();
   virtual void render(sf::RenderWindow &window);
   virtual void update(float elapsedTime);

@@ -9,6 +9,7 @@ namespace fightdude {
  * Item GameObject class.
  *
  * @author Daniel Peters
+ * @version 1.0
  */
 class Item : GameEntity {
  public:
@@ -17,6 +18,7 @@ class Item : GameEntity {
 
   std::string getName() const;
   std::string getDescription() const;
+
  private:
   std::string name;
   std::string description;

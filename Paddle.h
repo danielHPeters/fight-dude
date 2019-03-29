@@ -1,12 +1,9 @@
-//
-// Created by daniel on 12.10.17.
-//
-
 #ifndef FIGHT_DUDE_PADDLE_H
 #define FIGHT_DUDE_PADDLE_H
 
-#include "GameEntity.h"
+#include <string>
 #include <SFML/Window.hpp>
+#include "GameEntity.h"
 
 namespace fightdude {
 /**

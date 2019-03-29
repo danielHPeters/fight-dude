@@ -4,6 +4,9 @@
 namespace fightdude {
 /**
  * Constructor. Loads sprite. Throws assertion error if the sprite wasn't loaded.
+ *
+ * @param id
+ * @param fileName
  */
 Ball::Ball(std::string id, std::string fileName) : GameEntity(std::move(id), std::move(fileName)) {
   load();

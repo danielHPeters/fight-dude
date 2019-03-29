@@ -21,7 +21,7 @@ class Player : Entity {
 
  private:
   std::string name;
-  u_int64_t highScore;
+  uint64_t highScore;
 };
 } // namespace fightdude
 

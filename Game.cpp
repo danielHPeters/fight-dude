@@ -3,6 +3,7 @@
 #include "MainMenu.h"
 #include "Ball.h"
 
+namespace fightdude {
 Game::Game() {
   gameState = Game::UNINITIALIZED;
 }
@@ -15,8 +16,8 @@ void Game::start() {
   }
   mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
 
-  auto *ball = new Ball();
-  auto *player1 = new Paddle();
+  auto *ball = new Ball("1", "./../assets/game-objects/ball.png");
+  auto *player1 = new Paddle("2","./../assets/game-objects/paddle.png");
   player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
   ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
 
@@ -72,7 +73,7 @@ void Game::gameLoop() {
 
 void Game::showSplashScreen() {
   SplashScreen splashScreen;
-  splashScreen.show(mainWindow);
+  SplashScreen::show(mainWindow);
   gameState = Game::SHOWING_MENU;
 }
 
@@ -102,3 +103,4 @@ InputManager Game::getInputManager() {
 sf::RenderWindow &Game::getWindow() {
   return mainWindow;
 }
+} // namespace fightdude

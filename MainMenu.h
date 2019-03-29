@@ -5,10 +5,11 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 
+namespace fightdude {
 /**
  * Game main menu class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class MainMenu {
@@ -20,16 +21,17 @@ class MainMenu {
   struct MenuItem {
     explicit MenuItem(MenuResult action);
     sf::Rect<int> rect;
-    MenuResult action;
+    MainMenu::MenuResult action;
   };
 
-  MenuResult show(sf::RenderWindow &window);
+  MainMenu::MenuResult show(sf::RenderWindow &window);
 
  private:
   std::list<MenuItem> menuItems;
 
-  MenuResult getMenuResponse(sf::RenderWindow &window);
-  MenuResult handleClick(int x, int y);
+  MainMenu::MenuResult getMenuResponse(sf::RenderWindow &window);
+  MainMenu::MenuResult handleClick(int x, int y);
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_MAINMENU_H
+#endif // FIGHT_DUDE_MAINMENU_H

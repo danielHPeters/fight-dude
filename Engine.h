@@ -7,10 +7,11 @@
 
 #include "Input.h"
 
+namespace fightdude {
 /**
  * Game Engine class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class Engine {
@@ -21,5 +22,6 @@ class Engine {
   void start();
   void update();
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_ENGINE_H
+#endif // FIGHT_DUDE_ENGINE_H

@@ -2,18 +2,40 @@
 #include <iostream>
 #include "Paddle.h"
 
-Paddle::Paddle() : velocity(0.0f), maxVelocity(600.0f) {
-  load("./../assets/game-objects/paddle.png");
+namespace fightdude {
+/**
+ * Constructor.
+ */
+Paddle::Paddle(std::string id, std::string fileName)
+    : GameEntity(std::move(id), std::move(fileName)),
+      velocity(0.0f),
+      maxVelocity(600.0f) {
+  load();
   assert(isLoaded());
-  getSprite().setOrigin(getSprite().getGlobalBounds().width / 2, getSprite().getGlobalBounds().height / 2);
+
+  float width = this->sprite.getGlobalBounds().width / 2;
+  float height = this->sprite.getGlobalBounds().height / 2;
+
+  this->sprite.setOrigin(width, height);
 }
 
+/**
+ * Destructor.
+ */
 Paddle::~Paddle() = default;
 
-void Paddle::draw(sf::RenderWindow &renderWindow) {
-  GameEntity::draw(renderWindow);
+/**
+ *
+ * @param renderWindow
+ */
+void Paddle::render(sf::RenderWindow &renderWindow) {
+  GameEntity::render(renderWindow);
 }
 
+/**
+ *
+ * @param elapsedTime
+ */
 void Paddle::update(float elapsedTime) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
     velocity -= 3.0f;
@@ -45,6 +67,11 @@ void Paddle::update(float elapsedTime) {
   getSprite().move(velocity * elapsedTime, 0);
 }
 
+/**
+ *
+ * @return
+ */
 float Paddle::getVelocity() const {
   return velocity;
 }
+} // namespace fightdude

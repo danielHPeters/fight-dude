@@ -8,18 +8,19 @@
 #include "GameEntity.h"
 #include <SFML/Window.hpp>
 
+namespace fightdude {
 /**
  * Player paddle class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class Paddle : public GameEntity {
  public:
-  Paddle();
+  Paddle(std::string id, std::string fileName);
   ~Paddle() override;
 
-  void draw(sf::RenderWindow &renderWindow) override;
+  void render(sf::RenderWindow &renderWindow) override;
   void update(float elapsedTime) override;
   float getVelocity() const;
 
@@ -27,5 +28,6 @@ class Paddle : public GameEntity {
   float velocity;
   float maxVelocity;
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_PADDLE_H
+#endif // FIGHT_DUDE_PADDLE_H

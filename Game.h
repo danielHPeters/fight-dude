@@ -4,13 +4,14 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "Paddle.h"
-#include "ObjectManager.h"
+#include "EntityManager.h"
 #include "InputManager.h"
 
+namespace fightdude {
 /**
  * Main game class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class Game {
@@ -28,13 +29,14 @@ class Game {
 
   GameState gameState;
   sf::RenderWindow mainWindow;
-  ObjectManager gameObjectManager;
-  InputManager inputManager;
+  EntityManager gameObjectManager;
+  InputManager inputManager{};
 
   bool isExiting();
   void gameLoop();
   void showSplashScreen();
   void showMenu();
 };
+} // namespace fightdude
 
 #endif //FIGHT_DUDE_GAME_H

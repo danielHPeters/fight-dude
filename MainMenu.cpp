@@ -1,5 +1,11 @@
 #include "MainMenu.h"
 
+namespace fightdude {
+/**
+ *
+ * @param window
+ * @return
+ */
 MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window) {
   sf::Texture texture;
   texture.loadFromFile("./../assets/menu/main-menu.png");
@@ -26,20 +32,30 @@ MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window) {
   return getMenuResponse(window);
 }
 
+/**
+ *
+ * @param x
+ * @param y
+ * @return
+ */
 MainMenu::MenuResult MainMenu::handleClick(int x, int y) {
-  std::list<MenuItem>::iterator iterator;
 
-  for (iterator = menuItems.begin(); iterator != menuItems.end(); iterator++) {
-    sf::Rect<int> menuItemRect = (*iterator).rect;
+  for (auto &menuItem : menuItems) {
+    sf::Rect<int> menuItemRect = menuItem.rect;
 
     if (menuItemRect.contains(sf::Vector2<int>(x, y))) {
-      return (*iterator).action;
+      return menuItem.action;
     }
   }
 
   return MainMenu::NONE;
 }
 
+/**
+ *
+ * @param window
+ * @return
+ */
 MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow &window) {
   sf::Event menuEvent{};
 
@@ -53,5 +69,9 @@ MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow &window) {
       }
     }
   }
+
+  return MainMenu::NONE;
 }
+
 MainMenu::MenuItem::MenuItem(MainMenu::MenuResult action) : action(action) {}
+} // namespace fightdude

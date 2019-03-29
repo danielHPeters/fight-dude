@@ -8,7 +8,9 @@
  * @return exit code
  */
 int main(int argc, char *argv[]) {
-  Game game;
+  fightdude::Game game;
+
   game.start();
-  return 0;
+
+  return EXIT_SUCCESS;
 }

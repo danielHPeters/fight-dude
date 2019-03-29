@@ -5,31 +5,33 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
+namespace fightdude {
 /**
- * GameObject base class.
+ * GameEntity base class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class GameEntity {
  public:
-  GameEntity();
+  explicit GameEntity(std::string id, std::string fileName);
   virtual ~GameEntity();
-  virtual void load(const std::string &filename);
-  virtual void draw(sf::RenderWindow &window);
+  virtual void load();
+  virtual void render(sf::RenderWindow &window);
   virtual void update(float elapsedTime);
+  virtual std::string getId() const;
+  sf::Sprite &getSprite();
   virtual sf::Vector2f getPosition() const;
   virtual void setPosition(sf::Vector2f position);
   virtual bool isLoaded() const;
 
  protected:
-  sf::Sprite &getSprite();
-
- private:
+  std::string id;
   sf::Texture texture;
   sf::Sprite sprite;
-  std::string filename;
+  std::string fileName;
   bool loaded;
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_GAMEENTITY_H
+#endif // FIGHT_DUDE_GAMEENTITY_H

@@ -3,10 +3,11 @@
 
 #include <string>
 
+namespace fightdude {
 /**
  * Base game entity class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class Entity {
@@ -22,5 +23,6 @@ class Entity {
   std::string name;
   std::string description;
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_ENTITY_H
+#endif // FIGHT_DUDE_ENTITY_H

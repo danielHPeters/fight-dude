@@ -2,21 +2,25 @@
 #define FIGHT_DUDE_ITEM_H
 
 #include <string>
+#include "GameEntity.h"
 
+namespace fightdude {
 /**
  * Item GameObject class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  */
-class Item {
+class Item : GameEntity {
  public:
-  Item(std::string name, std::string description);
-  ~Item();
-  std::string getName();
-  std::string getDescription();
+  Item(std::string id, std::string fileName, std::string name, std::string description);
+  ~Item() override;
+
+  std::string getName() const;
+  std::string getDescription() const;
  private:
   std::string name;
   std::string description;
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_ITEM_H
+#endif // FIGHT_DUDE_ITEM_H

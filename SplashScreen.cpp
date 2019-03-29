@@ -1,5 +1,11 @@
 #include "SplashScreen.h"
 
+namespace fightdude {
+/**
+ * Display SplashScreen.
+ *
+ * @param window
+ */
 void SplashScreen::show(sf::RenderWindow &window) {
   sf::Texture texture;
   if (!texture.loadFromFile("./../assets/menu/splash-screen.png")) {
@@ -24,3 +30,4 @@ void SplashScreen::show(sf::RenderWindow &window) {
     }
   }
 }
+} // namespace fightdude

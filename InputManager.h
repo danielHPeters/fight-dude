@@ -3,10 +3,11 @@
 
 #include <SFML/Window.hpp>
 
+namespace fightdude {
 /**
  * Game input manager class.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class InputManager {
@@ -18,5 +19,6 @@ class InputManager {
   sf::Keyboard keyboard;
   sf::Mouse mouse;
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_INPUTMANAGER_H
+#endif // FIGHT_DUDE_INPUTMANAGER_H

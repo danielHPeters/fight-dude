@@ -3,15 +3,17 @@
 
 #include <SFML/Graphics.hpp>
 
+namespace fightdude {
 /**
  * Game splash screen.
  *
- * @author Daniel Peters <daniel.peters.ch@gmail.com>
+ * @author Daniel Peters
  * @version 1.0
  */
 class SplashScreen {
  public:
-  void show(sf::RenderWindow &window);
+  static void show(sf::RenderWindow &window);
 };
+} // namespace fightdude
 
-#endif //FIGHT_DUDE_SPLASHSCREEN_H
+#endif // FIGHT_DUDE_SPLASHSCREEN_H

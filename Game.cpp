@@ -11,42 +11,41 @@ Game::Game() {
 Game::~Game() = default;
 
 void Game::start() {
-  if (gameState != Game::UNINITIALIZED) {
-    return;
+  if (gameState == Game::State::UNINITIALIZED) {
+    mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
+
+    auto *ball = new Ball("1", "./../assets/game-objects/ball.png");
+    auto *player1 = new Paddle("2", "./../assets/game-objects/paddle.png");
+    player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
+    ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
+
+    gameObjectManager.add("ball", ball);
+    gameObjectManager.add("paddle1", player1);
+
+    gameState = Game::State::SHOWING_SPLASH;
+
+    while (!isExiting()) {
+      gameLoop();
+    }
+    mainWindow.close();
   }
-  mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
-
-  auto *ball = new Ball("1", "./../assets/game-objects/ball.png");
-  auto *player1 = new Paddle("2","./../assets/game-objects/paddle.png");
-  player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
-  ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
-
-  gameObjectManager.add("ball", ball);
-  gameObjectManager.add("paddle1", player1);
-
-  gameState = Game::SHOWING_SPLASH;
-
-  while (!isExiting()) {
-    gameLoop();
-  }
-  mainWindow.close();
 }
 
 bool Game::isExiting() {
-  return gameState == Game::EXITING;
+  return gameState == Game::State::EXITING;
 }
 
 void Game::gameLoop() {
   switch (gameState) {
-    case Game::SHOWING_MENU: {
+    case Game::State::SHOWING_MENU: {
       showMenu();
       break;
     }
-    case Game::SHOWING_SPLASH: {
+    case Game::State::SHOWING_SPLASH: {
       showSplashScreen();
       break;
     }
-    case Game::PLAYING: {
+    case Game::State::PLAYING: {
       sf::Event currentEvent{};
 
       while (mainWindow.pollEvent(currentEvent)) {
@@ -54,11 +53,13 @@ void Game::gameLoop() {
         gameObjectManager.drawAll(mainWindow);
         gameObjectManager.updateAll();
         mainWindow.display();
-        if (currentEvent.type == sf::Event::Closed) {
-          gameState = Game::EXITING;
+
+        if (currentEvent.type == sf::Event::EventType::Closed) {
+          gameState = Game::State::EXITING;
         }
-        if (currentEvent.type == sf::Event::KeyPressed) {
-          if (currentEvent.key.code == sf::Keyboard::Escape) {
+
+        if (currentEvent.type == sf::Event::EventType::KeyPressed) {
+          if (currentEvent.key.code == sf::Keyboard::Key::Escape) {
             showMenu();
           }
         }
@@ -73,21 +74,22 @@ void Game::gameLoop() {
 
 void Game::showSplashScreen() {
   SplashScreen splashScreen;
+
   SplashScreen::show(mainWindow);
-  gameState = Game::SHOWING_MENU;
+  gameState = Game::State::SHOWING_MENU;
 }
 
 void Game::showMenu() {
   MainMenu mainMenu;
-  MainMenu::MenuResult result = mainMenu.show(mainWindow);
+  MainMenu::Action result = mainMenu.show(mainWindow);
 
   switch (result) {
-    case MainMenu::EXIT: {
-      gameState = Game::EXITING;
+    case MainMenu::Action::EXIT: {
+      gameState = Game::State::EXITING;
       break;
     }
-    case MainMenu::PLAY: {
-      gameState = Game::PLAYING;
+    case MainMenu::Action::PLAY: {
+      gameState = Game::State::PLAYING;
       break;
     }
     default: {
@@ -96,10 +98,18 @@ void Game::showMenu() {
   }
 }
 
+/**
+ *
+ * @return
+ */
 InputManager Game::getInputManager() {
   return inputManager;
 }
 
+/**
+ *
+ * @return
+ */
 sf::RenderWindow &Game::getWindow() {
   return mainWindow;
 }

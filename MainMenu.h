@@ -14,23 +14,23 @@ namespace fightdude {
  */
 class MainMenu {
  public:
-  enum MenuResult {
+  enum Action {
     NONE, EXIT, PLAY
   };
 
   struct MenuItem {
-    explicit MenuItem(MenuResult action);
+    explicit MenuItem(MainMenu::Action action);
     sf::Rect<int> rect;
-    MainMenu::MenuResult action;
+    MainMenu::Action action;
   };
 
-  MainMenu::MenuResult show(sf::RenderWindow &window);
+  MainMenu::Action show(sf::RenderWindow &window);
 
  private:
-  std::list<MenuItem> menuItems;
+  std::list<MainMenu::MenuItem> menuItems;
 
-  MainMenu::MenuResult getMenuResponse(sf::RenderWindow &window);
-  MainMenu::MenuResult handleClick(int x, int y);
+  MainMenu::Action getMenuResponse(sf::RenderWindow &window);
+  MainMenu::Action handleClick(int x, int y);
 };
 } // namespace fightdude
 

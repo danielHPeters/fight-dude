@@ -16,6 +16,7 @@ class EntityManager {
  public:
   EntityManager();
   ~EntityManager();
+
   void add(const std::string &name, GameEntity *gameEntity);
   void remove(const std::string &name);
   GameEntity *get(const std::string &name) const;

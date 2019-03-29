@@ -6,18 +6,18 @@ namespace fightdude {
  * @param window
  * @return
  */
-MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window) {
+MainMenu::Action MainMenu::show(sf::RenderWindow &window) {
   sf::Texture texture;
   texture.loadFromFile("./../assets/menu/main-menu.png");
   sf::Sprite sprite(texture);
 
-  MenuItem playButton(MainMenu::PLAY);
+  MainMenu::MenuItem playButton(MainMenu::Action::PLAY);
   playButton.rect.top = 145;
   playButton.rect.height = 380;
   playButton.rect.left = 0;
   playButton.rect.width = 1023;
 
-  MenuItem exitButton(MainMenu::EXIT);
+  MainMenu::MenuItem exitButton(MainMenu::Action::EXIT);
   exitButton.rect.top = 383;
   exitButton.rect.height = 560;
   exitButton.rect.left = 0;
@@ -38,8 +38,7 @@ MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window) {
  * @param y
  * @return
  */
-MainMenu::MenuResult MainMenu::handleClick(int x, int y) {
-
+MainMenu::Action MainMenu::handleClick(int x, int y) {
   for (auto &menuItem : menuItems) {
     sf::Rect<int> menuItemRect = menuItem.rect;
 
@@ -48,7 +47,7 @@ MainMenu::MenuResult MainMenu::handleClick(int x, int y) {
     }
   }
 
-  return MainMenu::NONE;
+  return MainMenu::Action::NONE;
 }
 
 /**
@@ -56,22 +55,22 @@ MainMenu::MenuResult MainMenu::handleClick(int x, int y) {
  * @param window
  * @return
  */
-MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow &window) {
+MainMenu::Action MainMenu::getMenuResponse(sf::RenderWindow &window) {
   sf::Event menuEvent{};
 
   while (window.isOpen()) {
     while (window.pollEvent(menuEvent)) {
-      if (menuEvent.type == sf::Event::MouseButtonPressed) {
+      if (menuEvent.type == sf::Event::EventType::MouseButtonPressed) {
         return handleClick(menuEvent.mouseButton.x, menuEvent.mouseButton.y);
       }
-      if (menuEvent.type == sf::Event::Closed) {
-        return MainMenu::EXIT;
+      if (menuEvent.type == sf::Event::EventType::Closed) {
+        return MainMenu::Action::EXIT;
       }
     }
   }
 
-  return MainMenu::NONE;
+  return MainMenu::Action::NONE;
 }
 
-MainMenu::MenuItem::MenuItem(MainMenu::MenuResult action) : action(action) {}
+MainMenu::MenuItem::MenuItem(MainMenu::Action action) : action(action) {}
 } // namespace fightdude

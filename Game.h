@@ -23,11 +23,11 @@ class Game {
   sf::RenderWindow &getWindow();
 
  private:
-  enum GameState {
+  enum State {
     UNINITIALIZED, SHOWING_SPLASH, PAUSED, SHOWING_MENU, PLAYING, EXITING
   };
 
-  GameState gameState;
+  Game::State gameState;
   sf::RenderWindow mainWindow;
   EntityManager gameObjectManager;
   InputManager inputManager{};
@@ -39,4 +39,4 @@ class Game {
 };
 } // namespace fightdude
 
-#endif //FIGHT_DUDE_GAME_H
+#endif // FIGHT_DUDE_GAME_H

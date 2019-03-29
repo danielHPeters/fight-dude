@@ -14,6 +14,7 @@ class Entity {
  public:
   Entity(std::string id, std::string name, std::string description);
   virtual ~Entity();
+
   std::string getId();
   std::string getName();
   std::string getDescription();

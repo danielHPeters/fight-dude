@@ -21,7 +21,7 @@ class GameEntity {
   virtual void render(sf::RenderWindow &window);
   virtual void update(float elapsedTime);
   virtual std::string getId() const;
-  sf::Sprite &getSprite();
+  virtual sf::Sprite &getSprite();
   virtual sf::Vector2f getPosition() const;
   virtual void setPosition(sf::Vector2f position);
   virtual bool isLoaded() const;

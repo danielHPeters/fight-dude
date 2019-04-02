@@ -15,7 +15,7 @@ class Entity {
   explicit Entity(std::string id);
   virtual ~Entity();
 
-  std::string getId();
+  std::string getId() const;
 
  private:
   std::string id;

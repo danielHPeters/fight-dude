@@ -20,7 +20,7 @@ Entity::~Entity() = default;
  *
  * @return
  */
-std::string Entity::getId() {
+std::string Entity::getId() const {
   return id;
 }
 } // namespace fightdude

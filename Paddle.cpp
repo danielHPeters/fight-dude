@@ -9,7 +9,8 @@ namespace fightdude {
 Paddle::Paddle(std::string id, std::string fileName)
     : GameEntity(std::move(id), std::move(fileName)),
       velocity(0.0f),
-      maxVelocity(600.0f) {
+      maxVelocity(600.0f),
+      friction(0.9f) {
   load();
   assert(isLoaded());
 
@@ -38,40 +39,48 @@ void Paddle::render(sf::RenderWindow &renderWindow) {
  */
 void Paddle::update(float elapsedTime) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-    velocity -= 3.0f;
+    if (velocity > 0.0f) {
+      velocity = 0.0f;
+    }
+
+    if (velocity > -maxVelocity) {
+      velocity--;
+    }
   }
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-    velocity += 3.0f;
+    if (velocity < 0.0f) {
+      velocity = 0.0f;
+    }
+
+    if (velocity < maxVelocity) {
+      velocity++;
+    }
   }
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
     velocity = 0.0f;
   }
 
-  if (velocity > maxVelocity) {
-    velocity = maxVelocity;
-  } else if (velocity < -maxVelocity) {
-    velocity = -maxVelocity;
-  }
+  velocity *= friction;
 
   sf::Vector2f position = this->getPosition();
 
   bool left = position.x < (getSprite().getGlobalBounds().width / 2.0f);
   bool right = position.x > (1024.0f - getSprite().getGlobalBounds().width / 2.0f);
 
-  if (left || right) {
-    velocity = -velocity;
+  if ((left && velocity < 0.0f) || (right && velocity > 0.0f)) {
+    velocity = 0.0f;
   }
 
-  getSprite().move(velocity * elapsedTime, 0);
+  getSprite().move(velocity, 0);
 }
 
 /**
  *
  * @return
  */
-float Paddle::getVelocity() const {
+double Paddle::getVelocity() const {
   return velocity;
 }
 } //namespace fightdude

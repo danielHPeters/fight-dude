@@ -8,6 +8,8 @@ namespace fightdude {
  * Base shape class.
  *
  * @tparam Type
+ * @author Daniel Peters
+ * @version 1.0
  */
 template<class Type>
 class Shape {

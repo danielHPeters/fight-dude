@@ -9,6 +9,9 @@
 namespace fightdude {
 /**
  * Unit selection class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
  */
 class Selection : Entity {
  public:

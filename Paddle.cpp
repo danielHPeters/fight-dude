@@ -5,6 +5,9 @@
 namespace fightdude {
 /**
  * Constructor.
+ *
+ * @param id
+ * @param fileName
  */
 Paddle::Paddle(std::string id, std::string fileName)
     : GameEntity(std::move(id), std::move(fileName)),

@@ -5,6 +5,12 @@
 #include "Entity.h"
 
 namespace fightdude {
+/**
+ * Audio data definition class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
+ */
 class AudioData : Entity {
  protected:
   AudioData(

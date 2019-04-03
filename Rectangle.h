@@ -9,6 +9,8 @@ namespace fightdude {
  * Rectangle shape used for collision checking.
  *
  * @tparam Type Numeric type
+ * @author Daniel Peters
+ * @version 1.0
  */
 template<class Type>
 class Rectangle : Shape<Type> {

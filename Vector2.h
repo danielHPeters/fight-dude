@@ -2,11 +2,12 @@
 #define FIGHT_DUDE_VECTOR2_H
 
 namespace fightdude {
-
 /**
  * Custom 2D vector implementation.
  *
  * @tparam Type Numeric type
+ * @author Daniel Peters
+ * @version 1.0
  */
 template<class Type>
 class Vector2 {

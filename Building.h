@@ -6,6 +6,12 @@
 #include "GameEntity.h"
 
 namespace fightdude {
+/**
+ * Building unit class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
+ */
 class Building : GameEntity {
   Building(std::string id, std::string name, std::string fileName);
   ~Building() override;

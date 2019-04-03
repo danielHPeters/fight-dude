@@ -4,6 +4,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include "Entity.h"
 
 namespace fightdude {
 /**
@@ -12,15 +13,15 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class GameEntity {
+class GameEntity : Entity {
  public:
   explicit GameEntity(std::string id, std::string fileName);
-  virtual ~GameEntity();
+  ~GameEntity() override;
 
   virtual void load();
   virtual void render(sf::RenderWindow &window);
   virtual void update(float elapsedTime);
-  virtual std::string getId() const;
+  std::string getId() const override;
   virtual sf::Sprite &getSprite();
   virtual sf::Vector2f getPosition() const;
   virtual void setPosition(sf::Vector2f position);

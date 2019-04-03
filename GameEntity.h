@@ -33,6 +33,6 @@ class GameEntity {
   std::string fileName;
   bool loaded;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_GAMEENTITY_H
+#endif //FIGHT_DUDE_GAMEENTITY_H

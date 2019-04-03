@@ -37,6 +37,6 @@ class Game {
   void showSplashScreen();
   void showMenu();
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_GAME_H
+#endif //FIGHT_DUDE_GAME_H

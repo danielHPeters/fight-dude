@@ -14,6 +14,6 @@ class SplashScreen {
  public:
   static void show(sf::RenderWindow &window);
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_SPLASHSCREEN_H
+#endif //FIGHT_DUDE_SPLASHSCREEN_H

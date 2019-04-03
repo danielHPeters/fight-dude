@@ -17,6 +17,6 @@ class Building : GameEntity {
   std::string name;
   std::string description;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_BUILDING_H
+#endif //FIGHT_DUDE_BUILDING_H

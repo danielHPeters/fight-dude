@@ -1,3 +1,4 @@
+#include <utility>
 #include "Selection.h"
 
 namespace fightdude {
@@ -12,4 +13,4 @@ Selection::Selection(std::string id) : Entity(std::move(id)) {}
  * Destructor.
  */
 Selection::~Selection() = default;
-} // namespace fightdude
+} //namespace fightdude

@@ -22,6 +22,6 @@ class InputManager {
   sf::Keyboard keyboard;
   sf::Mouse mouse;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_INPUTMANAGER_H
+#endif //FIGHT_DUDE_INPUTMANAGER_H

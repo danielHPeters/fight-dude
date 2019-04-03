@@ -18,6 +18,6 @@ class Engine {
   void start();
   void update();
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_ENGINE_H
+#endif //FIGHT_DUDE_ENGINE_H

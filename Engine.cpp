@@ -4,4 +4,4 @@ namespace fightdude {
 void Engine::start() {}
 
 void Engine::update() {}
-} // namespace fightdude
+} //namespace fightdude

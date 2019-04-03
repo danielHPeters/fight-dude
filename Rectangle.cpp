@@ -1,65 +1,116 @@
 #include "Rectangle.h"
 
 namespace fightdude {
-Rectangle::Rectangle(double left, double right, double top, double bottom)
-    : left(left), right(right), top(top), bottom(bottom) {}
+/**
+ * Constructor.
+ *
+ * @tparam Type
+ * @param left
+ * @param right
+ * @param width
+ * @param height
+ */
+template<class Type>
+Rectangle<Type>::Rectangle(std::uint8_t sidesCount, Type left, Type top, Type width, Type height)
+    : Shape<Type>(sidesCount), left(left), top(top), width(width), height(height) {}
+
+/**
+ * Destructor.
+ *
+ * @tparam Type
+ */
+template<class Type>
+Rectangle<Type>::~Rectangle() = default;
 
 /**
  * Set all values.
  *
+ * @tparam Type
  * @param left
  * @param right
- * @param top
- * @param bottom
+ * @param width
+ * @param height
  */
-void Rectangle::set(double left, double right, double top, double bottom) {
+template<class Type>
+void Rectangle<Type>::set(Type left, Type top, Type width, Type height) {
   this->left = left;
-  this->right = right;
   this->top = top;
-  this->bottom = bottom;
+  this->width = width;
+  this->height = height;
 }
 
 /**
  * Check if this rectangle is within the area of other rectangle.
  *
+ * @tparam Type
  * @param other Other rectangle
  * @return
  */
-bool Rectangle::within(Rectangle &other) const {
-  return other.left <= this->left &&
-      other.right >= this->right &&
-      other.top <= this->top &&
-      other.bottom >= this->bottom;
+template<class Type>
+bool Rectangle<Type>::within(Rectangle &other) const {
+  return false;
 }
 
 /**
  * Check if this rectangle overlaps with other rectangle.
  *
+ * @tparam Type
  * @param other Other rectangle
  * @return      True if this rectangle overlaps with other rectangle
  */
-bool Rectangle::overlaps(Rectangle &other) const {
-  return this->left < other.right &&
-      other.left < this->right &&
-      this->top < other.bottom &&
-      other.top < this->bottom;
+template<class Type>
+bool Rectangle<Type>::overlaps(Rectangle &other) const {
+  return false;
 }
 
 /**
  *
+ * @tparam Type
  * @return
  */
-double Rectangle::getWidth() const {
-  return this->right - this->left;
+template<class Type>
+Type Rectangle<Type>::getLeft() const {
+  return left;
 }
 
 /**
  *
+ * @tparam Type
  * @return
  */
-double Rectangle::getHeight() const {
-  return this->bottom - this->top;
+template<class Type>
+Type Rectangle<Type>::getTop() const {
+  return top;
 }
 
-Rectangle::~Rectangle() = default;
+/**
+ * Get left (x) and top (y) as position vector.
+ *
+ * @tparam Type
+ * @return
+ */
+template<class Type>
+Vector2<Type> Rectangle<Type>::getPosition() const {
+  return Vector2<Type>(left, top);
 }
+
+/**
+ *
+ * @tparam Type
+ * @return
+ */
+template<class Type>
+Type Rectangle<Type>::getWidth() const {
+  return width;
+}
+
+/**
+ *
+ * @tparam Type
+ * @return
+ */
+template<class Type>
+Type Rectangle<Type>::getHeight() const {
+  return height;
+}
+} //namespace fightdude

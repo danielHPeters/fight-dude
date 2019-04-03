@@ -84,4 +84,4 @@ void EntityManager::updateAll() {
   }
   clock.restart();
 }
-} // namespace fightdude
+} //namespace fightdude

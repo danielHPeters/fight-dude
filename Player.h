@@ -2,6 +2,7 @@
 #define FIGHT_DUDE_PLAYER_H
 
 #include <string>
+#include <cstdint>
 #include "Entity.h"
 
 namespace fightdude {
@@ -17,12 +18,12 @@ class Player : Entity {
   ~Player() override;
 
   std::string getName() const;
-  uint64_t getHighScore() const;
+  std::uint64_t getHighScore() const;
 
  private:
   std::string name;
-  uint64_t highScore;
+  std::uint64_t highScore;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_PLAYER_H
+#endif //FIGHT_DUDE_PLAYER_H

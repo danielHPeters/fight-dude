@@ -8,26 +8,28 @@ namespace fightdude {
  */
 void SplashScreen::show(sf::RenderWindow &window) {
   sf::Texture texture;
-  if (!texture.loadFromFile("./../assets/menu/splash-screen.png")) {
-    return;
-  }
-  texture.setSmooth(true);
-  sf::Sprite sprite;
-  sprite.setTexture(texture);
+  bool textureLoaded = texture.loadFromFile("./../assets/menu/splash-screen.png");
 
-  window.draw(sprite);
-  window.display();
+  if (textureLoaded) {
+    texture.setSmooth(true);
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
 
-  sf::Event event{};
+    window.draw(sprite);
+    window.display();
 
-  while (window.isOpen()) {
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::EventType::KeyPressed
-          || event.type == sf::Event::EventType::MouseButtonPressed
-          || event.type == sf::Event::EventType::Closed) {
-        return;
+    sf::Event event{};
+    bool shouldHide = false;
+
+    while (window.isOpen() && !shouldHide) {
+      while (window.pollEvent(event)) {
+        if (event.type == sf::Event::EventType::KeyPressed
+            || event.type == sf::Event::EventType::MouseButtonPressed
+            || event.type == sf::Event::EventType::Closed) {
+          shouldHide = true;
+        }
       }
     }
   }
 }
-} // namespace fightdude
+} //namespace fightdude

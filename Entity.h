@@ -20,6 +20,6 @@ class Entity {
  private:
   std::string id;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_ENTITY_H
+#endif //FIGHT_DUDE_ENTITY_H

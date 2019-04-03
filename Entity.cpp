@@ -1,3 +1,4 @@
+#include <utility>
 #include "Entity.h"
 
 namespace fightdude {
@@ -23,4 +24,4 @@ Entity::~Entity() = default;
 std::string Entity::getId() const {
   return id;
 }
-} // namespace fightdude
+} //namespace fightdude

@@ -1,4 +1,5 @@
 #include <cassert>
+#include <utility>
 #include "Paddle.h"
 
 namespace fightdude {
@@ -73,4 +74,4 @@ void Paddle::update(float elapsedTime) {
 float Paddle::getVelocity() const {
   return velocity;
 }
-} // namespace fightdude
+} //namespace fightdude

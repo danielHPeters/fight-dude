@@ -11,4 +11,4 @@ namespace fightdude {
 class Input {};
 } // namespace fightdude
 
-#endif // FIGHT_DUDE_INPUT_H
+#endif //FIGHT_DUDE_INPUT_H

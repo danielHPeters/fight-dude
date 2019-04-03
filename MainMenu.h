@@ -32,6 +32,6 @@ class MainMenu {
   MainMenu::Action getMenuResponse(sf::RenderWindow &window);
   MainMenu::Action handleClick(int x, int y);
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_MAINMENU_H
+#endif //FIGHT_DUDE_MAINMENU_H

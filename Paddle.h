@@ -25,6 +25,6 @@ class Paddle : public GameEntity {
   float velocity;
   float maxVelocity;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_PADDLE_H
+#endif //FIGHT_DUDE_PADDLE_H

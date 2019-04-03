@@ -16,6 +16,6 @@ class Ball : public GameEntity {
   Ball(std::string id, std::string fileName);
   ~Ball() override;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_BALL_H
+#endif //FIGHT_DUDE_BALL_H

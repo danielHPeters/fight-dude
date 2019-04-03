@@ -23,6 +23,6 @@ class Item : GameEntity {
   std::string name;
   std::string description;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_ITEM_H
+#endif //FIGHT_DUDE_ITEM_H

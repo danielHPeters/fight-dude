@@ -73,4 +73,4 @@ MainMenu::Action MainMenu::getMenuResponse(sf::RenderWindow &window) {
 }
 
 MainMenu::MenuItem::MenuItem(MainMenu::Action action) : action(action) {}
-} // namespace fightdude
+} //namespace fightdude

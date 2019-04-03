@@ -1,4 +1,5 @@
 #include <cassert>
+#include <utility>
 #include "Ball.h"
 
 namespace fightdude {
@@ -18,4 +19,4 @@ Ball::Ball(std::string id, std::string fileName) : GameEntity(std::move(id), std
  * Destructor.
  */
 Ball::~Ball() = default;
-} // namespace fightdude
+} //namespace fightdude

@@ -18,6 +18,6 @@ class Selection : Entity {
  private:
   std::unordered_map<std::string, GameEntity> units;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_SELECTION_H
+#endif //FIGHT_DUDE_SELECTION_H

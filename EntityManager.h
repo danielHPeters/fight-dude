@@ -10,7 +10,7 @@
 
 namespace fightdude {
 /**
- * Game object manager class.
+ * Game object manager class. Owns all GameEntity object references.
  *
  * @author Daniel Peters
  * @version 1.0
@@ -28,6 +28,9 @@ class EntityManager {
   void updateAll();
 
  private:
+  /**
+   * Deallocator for game entities.
+   */
   struct GameEntityDeallocator {
     void operator()(const std::pair<std::string, GameEntity *> &p) const {
       delete p.second;
@@ -37,6 +40,6 @@ class EntityManager {
   std::map<std::string, GameEntity *> gameEntities;
   sf::Clock clock;
 };
-} // namespace fightdude
+} //namespace fightdude
 
-#endif // FIGHT_DUDE_ENTITYMANAGER_H
+#endif //FIGHT_DUDE_ENTITYMANAGER_H

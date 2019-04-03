@@ -1,6 +1,6 @@
-#include "Vector.h"
+#include "Vector2.h"
+#include <cmath>
 #include <exception>
-#include <math.h>
 
 namespace fightdude {
 /**
@@ -11,7 +11,7 @@ namespace fightdude {
  * @param y
  */
 template<class Type>
-Vector<Type>::Vector(Type x, Type y) : x(x), y(y) {}
+Vector2<Type>::Vector2(Type x, Type y) : x(x), y(y) {}
 
 /**
  * Destructor.
@@ -19,7 +19,7 @@ Vector<Type>::Vector(Type x, Type y) : x(x), y(y) {}
  * @tparam Type
  */
 template<class Type>
-Vector<Type>::~Vector() = default;
+Vector2<Type>::~Vector2() = default;
 
 /**
  * Equality check operator.
@@ -29,7 +29,7 @@ Vector<Type>::~Vector() = default;
  * @return
  */
 template<class Type>
-bool Vector<Type>::operator==(const Vector<Type> &vector) {
+bool Vector2<Type>::operator==(const Vector2<Type> &vector) {
   return this->x == vector.x && this->y == vector.y;
 }
 
@@ -40,8 +40,8 @@ bool Vector<Type>::operator==(const Vector<Type> &vector) {
  * @return
  */
 template<class Type>
-Vector<Type> Vector<Type>::operator+(const Vector<Type> &vector) {
-  return Vector<Type>(this->x + vector.x, this->y + vector.y);
+Vector2<Type> Vector2<Type>::operator+(const Vector2<Type> &vector) {
+  return Vector2<Type>(this->x + vector.x, this->y + vector.y);
 }
 
 /**
@@ -50,7 +50,7 @@ Vector<Type> Vector<Type>::operator+(const Vector<Type> &vector) {
  * @param vector
  */
 template<class Type>
-void Vector<Type>::operator+=(const Vector<Type> &vector) {
+void Vector2<Type>::operator+=(const Vector2<Type> &vector) {
   this->x = vector.x;
   this->y = vector.y;
 }
@@ -61,7 +61,7 @@ void Vector<Type>::operator+=(const Vector<Type> &vector) {
  * @return
  */
 template<class Type>
-Type Vector<Type>::getX() const {
+Type Vector2<Type>::getX() const {
   return x;
 }
 
@@ -71,7 +71,7 @@ Type Vector<Type>::getX() const {
  * @return
  */
 template<class Type>
-Type Vector<Type>::getY() const {
+Type Vector2<Type>::getY() const {
   return y;
 }
 
@@ -81,8 +81,8 @@ Type Vector<Type>::getY() const {
  * @return
  */
 template<class Type>
-Type Vector<Type>::mag() const {
-  return sqrt(this->x * this->x + this->y * this > y);
+Type Vector2<Type>::mag() const {
+  return std::sqrt(this->x * this->x + this->y * this > y);
 }
 
 /**
@@ -93,7 +93,7 @@ Type Vector<Type>::mag() const {
  * @return
  */
 template<class Type>
-Type Vector<Type>::dot(Vector<Type> vector) const {
+Type Vector2<Type>::dot(Vector2<Type> vector) const {
   return this->x * vector.x + this->y * vector.y;
 }
 
@@ -105,7 +105,7 @@ Type Vector<Type>::dot(Vector<Type> vector) const {
  * @param normal
  */
 template<class Type>
-void Vector<Type>::lerp(Vector<Type> vector, Type normal) const {
+void Vector2<Type>::lerp(Vector2<Type> vector, Type normal) const {
   this->x = (1 - normal) * this->x + normal * vector.x;
   this->y = (1 - normal) * this->y + normal * vector.y;
 }
@@ -116,7 +116,7 @@ void Vector<Type>::lerp(Vector<Type> vector, Type normal) const {
  * @param vector
  */
 template<class Type>
-void Vector<Type>::add(Vector &vector) {
+void Vector2<Type>::add(Vector2 &vector) {
   this->x += vector.x;
   this->y += vector.y;
 }
@@ -128,7 +128,7 @@ void Vector<Type>::add(Vector &vector) {
  * @param y
  */
 template<class Type>
-void Vector<Type>::add(Type x, Type y) {
+void Vector2<Type>::add(Type x, Type y) {
   this->x += x;
   this->y += y;
 }
@@ -139,7 +139,7 @@ void Vector<Type>::add(Type x, Type y) {
  * @param vector
  */
 template<class Type>
-void Vector<Type>::subtract(Vector<Type> &vector) {
+void Vector2<Type>::subtract(Vector2<Type> &vector) {
   this->x -= vector.x;
   this->y -= vector.y;
 }
@@ -151,7 +151,7 @@ void Vector<Type>::subtract(Vector<Type> &vector) {
  * @param y
  */
 template<class Type>
-void Vector<Type>::subtract(Type x, Type y) {
+void Vector2<Type>::subtract(Type x, Type y) {
   this->x -= x;
   this->y -= y;
 }
@@ -162,7 +162,7 @@ void Vector<Type>::subtract(Type x, Type y) {
  * @param scalar
  */
 template<class Type>
-void Vector<Type>::multitply(Type scalar) {
+void Vector2<Type>::multitply(Type scalar) {
   this->x *= scalar;
   this->y *= scalar;
 }
@@ -173,10 +173,11 @@ void Vector<Type>::multitply(Type scalar) {
  * @param scalar
  */
 template<class Type>
-void Vector<Type>::divide(Type scalar) {
+void Vector2<Type>::divide(Type scalar) {
   if (scalar == 0.0) {
     throw std::exception();
   }
+
   this->x /= scalar;
   this->y /= scalar;
 }
@@ -186,7 +187,7 @@ void Vector<Type>::divide(Type scalar) {
  * @tparam Type
  */
 template<class Type>
-void Vector<Type>::normalize() {
+void Vector2<Type>::normalize() {
   this->divide(mag());
 }
-} // namespace fightdude
+} //namespace fightdude

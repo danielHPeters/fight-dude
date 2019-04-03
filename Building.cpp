@@ -1,9 +1,4 @@
 #include <utility>
-
-#include <utility>
-
-#include <utility>
-
 #include "Building.h"
 
 namespace fightdude {
@@ -40,4 +35,4 @@ std::string Building::getName() const {
 std::string Building::getDescription() const {
   return description;
 }
-} // namespace fightdude
+} //namespace fightdude

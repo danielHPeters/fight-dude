@@ -1,3 +1,4 @@
+#include <utility>
 #include "Player.h"
 
 namespace fightdude {
@@ -30,4 +31,4 @@ std::string Player::getName() const {
 uint64_t Player::getHighScore() const {
   return highScore;
 }
-} // namespace fightdude
+} //namespace fightdude

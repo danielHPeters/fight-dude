@@ -26,4 +26,4 @@ sf::Keyboard &InputManager::getKeyboard() {
 sf::Mouse &InputManager::getMouse() {
   return mouse;
 }
-} // namespace fightdude
+} //namespace fightdude

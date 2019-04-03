@@ -1,3 +1,4 @@
+#include <utility>
 #include "GameEntity.h"
 
 namespace fightdude {
@@ -84,4 +85,4 @@ void GameEntity::setPosition(sf::Vector2f position) {
     sprite.setPosition(position);
   }
 }
-} // namespace fightdude
+} //namespace fightdude

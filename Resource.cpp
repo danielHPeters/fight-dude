@@ -1,3 +1,3 @@
 #include "Resource.h"
 
-namespace fightdude {} // namespace fightdude
+namespace fightdude {} //namespace fightdude

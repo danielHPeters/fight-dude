@@ -4,12 +4,19 @@
 #include "Ball.h"
 
 namespace fightdude {
-Game::Game() {
-  gameState = Game::State::UNINITIALIZED;
-}
+/**
+ * Constructor.
+ */
+Game::Game(): gameState(Game::State::UNINITIALIZED) {}
 
+/**
+ * Destructor.
+ */
 Game::~Game() = default;
 
+/**
+ * Start the game.
+ */
 void Game::start() {
   if (gameState == Game::State::UNINITIALIZED) {
     mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
@@ -30,10 +37,18 @@ void Game::start() {
   }
 }
 
+/**
+ * Check if game exit is requested.
+ *
+ * @return
+ */
 bool Game::isExiting() {
   return gameState == Game::State::EXITING;
 }
 
+/**
+ * Main game loop.
+ */
 void Game::gameLoop() {
   switch (gameState) {
     case Game::State::SHOWING_MENU: {
@@ -71,13 +86,17 @@ void Game::gameLoop() {
   }
 }
 
+/**
+ * Show splash screen.
+ */
 void Game::showSplashScreen() {
-  SplashScreen splashScreen;
-
   SplashScreen::show(mainWindow);
   gameState = Game::State::SHOWING_MENU;
 }
 
+/**
+ * Show main menu.
+ */
 void Game::showMenu() {
   MainMenu mainMenu;
   MainMenu::Action result = mainMenu.show(mainWindow);
@@ -112,4 +131,4 @@ InputManager Game::getInputManager() {
 sf::RenderWindow &Game::getWindow() {
   return mainWindow;
 }
-} // namespace fightdude
+} //namespace fightdude

@@ -30,6 +30,6 @@ class AudioData : Entity {
   float frequency;
   float bitrate;
 };
-} // namespace fightdude
+} //namespace fightdude
 
 #endif //FIGHT_DUDE_AUDIODATA_H

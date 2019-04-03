@@ -25,4 +25,20 @@ Unit::~Unit() = default;
 Unit::Type Unit::getType() const {
   return type;
 }
+
+/**
+ *
+ * @param renderWindow
+ */
+void Unit::render(sf::RenderWindow &renderWindow) {
+  GameEntity::render(renderWindow);
+}
+
+/**
+ *
+ * @param elapsedTime
+ */
+void Unit::update(double elapsedTime) {
+  GameEntity::update(elapsedTime);
+}
 } //namespace fightdude

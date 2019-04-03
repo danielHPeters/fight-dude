@@ -1,6 +1,6 @@
-#include "Vector2.h"
 #include <cmath>
 #include <exception>
+#include "Vector2.h"
 
 namespace fightdude {
 /**
@@ -105,7 +105,7 @@ Type Vector2<Type>::dot(Vector2<Type> vector) const {
  * @param normal
  */
 template<class Type>
-void Vector2<Type>::lerp(Vector2<Type> vector, Type normal) const {
+void Vector2<Type>::lerp(Vector2<Type> vector, Type normal) {
   this->x = (1 - normal) * this->x + normal * vector.x;
   this->y = (1 - normal) * this->y + normal * vector.y;
 }

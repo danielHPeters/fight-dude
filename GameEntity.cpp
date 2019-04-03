@@ -42,7 +42,7 @@ void GameEntity::render(sf::RenderWindow &window) {
  *
  * @param elapsedTime
  */
-void GameEntity::update(float elapsedTime) {}
+void GameEntity::update(double elapsedTime) {}
 
 /**
  *

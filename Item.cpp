@@ -19,6 +19,22 @@ Item::~Item() = default;
 
 /**
  *
+ * @param renderWindow
+ */
+void Item::render(sf::RenderWindow &renderWindow) {
+  GameEntity::render(renderWindow);
+}
+
+/**
+ *
+ * @param elapsedTime
+ */
+void Item::update(double elapsedTime) {
+  GameEntity::update(elapsedTime);
+}
+
+/**
+ *
  * @return
  */
 std::string Item::getName() const {

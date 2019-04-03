@@ -23,7 +23,7 @@ class Vector2 {
   Type getY() const;
   Type mag() const;
   Type dot(Vector2<Type> vector) const;
-  void lerp(Vector2<Type> vector, Type normal) const;
+  void lerp(Vector2<Type> vector, Type normal);
   void add(Vector2<Type> &vector);
   void add(Type x, Type y);
   void subtract(Vector2<Type> &vector);

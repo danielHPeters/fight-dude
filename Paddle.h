@@ -18,7 +18,7 @@ class Paddle : public GameEntity {
   ~Paddle() override;
 
   void render(sf::RenderWindow &renderWindow) override;
-  void update(float elapsedTime) override;
+  void update(double elapsedTime) override;
   double getVelocity() const;
 
  private:

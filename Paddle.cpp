@@ -40,7 +40,7 @@ void Paddle::render(sf::RenderWindow &renderWindow) {
  *
  * @param elapsedTime
  */
-void Paddle::update(float elapsedTime) {
+void Paddle::update(double elapsedTime) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
     if (velocity > 0.0f) {
       velocity = 0.0f;

@@ -20,7 +20,7 @@ class GameEntity : Entity {
 
   virtual void load();
   virtual void render(sf::RenderWindow &window);
-  virtual void update(float elapsedTime);
+  virtual void update(double elapsedTime);
   std::string getId() const override;
   virtual sf::Sprite &getSprite();
   virtual sf::Vector2f getPosition() const;

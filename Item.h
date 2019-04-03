@@ -16,6 +16,8 @@ class Item : GameEntity {
   Item(std::string id, std::string fileName, std::string name, std::string description);
   ~Item() override;
 
+  void render(sf::RenderWindow &renderWindow) override;
+  void update(double elapsedTime) override;
   std::string getName() const;
   std::string getDescription() const;
 

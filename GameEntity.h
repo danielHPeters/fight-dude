@@ -13,22 +13,20 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class GameEntity : Entity {
+class GameEntity : public Entity {
  public:
-  explicit GameEntity(std::string id, std::string fileName);
+  explicit GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName);
   ~GameEntity() override;
 
   virtual void load();
   virtual void render(sf::RenderWindow &window);
   virtual void update(double elapsedTime);
-  std::string getId() const override;
   virtual sf::Sprite &getSprite();
   virtual sf::Vector2f getPosition() const;
   virtual void setPosition(sf::Vector2f position);
   virtual bool isLoaded() const;
 
  protected:
-  std::string id;
   sf::Texture texture;
   sf::Sprite sprite;
   std::string fileName;

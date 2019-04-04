@@ -6,10 +6,12 @@ namespace fightdude {
  * Constructor.
  *
  * @param id
+ * @param createdAt
+ * @param updatedAt
  * @param fileName
  */
-GameEntity::GameEntity(std::string id, std::string fileName)
-    : id(std::move(id)), fileName(std::move(fileName)), loaded(false) {}
+GameEntity::GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName)
+    : Entity(std::move(id), std::move(createdAt), std::move(createdAt)), fileName(std::move(fileName)), loaded(false) {}
 
 /**
  * Destructor.
@@ -43,14 +45,6 @@ void GameEntity::render(sf::RenderWindow &window) {
  * @param elapsedTime
  */
 void GameEntity::update(double elapsedTime) {}
-
-/**
- *
- * @return
- */
-std::string GameEntity::getId() const {
-  return this->id;
-}
 
 /**
  *

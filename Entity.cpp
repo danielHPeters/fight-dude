@@ -6,10 +6,11 @@ namespace fightdude {
  * Constructor.
  *
  * @param id
- * @param name
- * @param description
+ * @param createdAt
+ * @param updatedAt
  */
-Entity::Entity(std::string id) : id(std::move(id)) {}
+Entity::Entity(std::string id, std::string createdAt, std::string updatedAt)
+    : id(std::move(id)), createdAt(std::move(createdAt)), updatedAt(std::move(updatedAt)) {}
 
 /**
  * Destructor.
@@ -23,5 +24,21 @@ Entity::~Entity() = default;
  */
 std::string Entity::getId() const {
   return id;
+}
+
+/**
+ *
+ * @return
+ */
+std::string Entity::getCreatedAt() const {
+  return createdAt;
+}
+
+/**
+ *
+ * @return
+ */
+std::string Entity::getUpdatedAt() const {
+  return updatedAt;
 }
 } //namespace fightdude

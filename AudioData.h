@@ -15,6 +15,8 @@ class AudioData : Entity {
  protected:
   AudioData(
       std::string id,
+      std::string createdAt,
+      std::string updatedAt,
       std::string sourceFile,
       std::string name,
       std::string authorName,

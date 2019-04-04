@@ -6,6 +6,8 @@ namespace fightdude {
  * Constructor.
  *
  * @param id
+ * @param createdAt
+ * @param updatedAt
  * @param sourceFile
  * @param name
  * @param authorName
@@ -14,12 +16,14 @@ namespace fightdude {
  */
 AudioData::AudioData(
     std::string id,
+    std::string createdAt,
+    std::string updatedAt,
     std::string sourceFile,
     std::string name,
     std::string authorName,
     float frequency,
     float bitrate
-) : Entity(std::move(id)),
+) : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)),
     sourceFile(std::move(sourceFile)),
     name(std::move(name)),
     authorName(std::move(authorName)),

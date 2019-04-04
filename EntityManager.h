@@ -7,7 +7,6 @@
 #include <SFML/System.hpp>
 #include "GameEntity.h"
 
-
 namespace fightdude {
 /**
  * Game object manager class. Owns all GameEntity object references.

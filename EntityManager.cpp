@@ -45,6 +45,7 @@ void EntityManager::remove(const std::string &name) {
  */
 GameEntity *EntityManager::get(const std::string &name) const {
   auto results = gameEntities.find(name);
+
   return results == gameEntities.end() ? nullptr : results->second;
 }
 
@@ -62,7 +63,7 @@ int EntityManager::getObjectCount() const {
  * @param renderWindow
  */
 void EntityManager::drawAll(sf::RenderWindow &renderWindow) {
-  std::map<std::string, GameEntity *>::const_iterator iterator = gameEntities.begin();
+  auto iterator = gameEntities.begin();
 
   while (iterator != gameEntities.end()) {
     iterator->second->render(renderWindow);
@@ -74,7 +75,7 @@ void EntityManager::drawAll(sf::RenderWindow &renderWindow) {
  * Update all entities.
  */
 void EntityManager::updateAll() {
-  std::map<std::string, GameEntity *>::const_iterator iterator = gameEntities.begin();
+  auto iterator = gameEntities.begin();
 
   float elapsedTime = clock.getElapsedTime().asSeconds();
 

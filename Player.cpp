@@ -28,7 +28,7 @@ std::string Player::getName() const {
  *
  * @return
  */
-uint64_t Player::getHighScore() const {
+std::uint64_t Player::getHighScore() const {
   return highScore;
 }
 } //namespace fightdude

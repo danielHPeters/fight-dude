@@ -15,7 +15,7 @@ namespace fightdude {
  */
 class GameEntity : public Entity {
  public:
-  explicit GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName);
+  GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName);
   ~GameEntity() override;
 
   virtual void load();

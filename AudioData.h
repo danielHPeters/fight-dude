@@ -12,7 +12,7 @@ namespace fightdude {
  * @version 1.0
  */
 class AudioData : Entity {
- protected:
+ public:
   AudioData(
       std::string id,
       std::string createdAt,

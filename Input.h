@@ -9,6 +9,6 @@ namespace fightdude {
  * @version 1.0
  */
 class Input {};
-} // namespace fightdude
+} //namespace fightdude
 
 #endif //FIGHT_DUDE_INPUT_H

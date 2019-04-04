@@ -6,6 +6,12 @@
 #include <functional>
 
 namespace fightdude {
+/**
+ * Ability class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
+ */
 class Ability {
  public:
   explicit Ability(std::string name);

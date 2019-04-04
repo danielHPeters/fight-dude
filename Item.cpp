@@ -9,8 +9,16 @@ namespace fightdude {
  * @param name
  * @param description
  */
-Item::Item(std::string id, std::string fileName, std::string name, std::string description)
-    : GameEntity(std::move(id), std::move(fileName)), name(std::move(name)), description(std::move(description)) {}
+Item::Item(
+    std::string id,
+    std::string createdAt,
+    std::string updatedAt,
+    std::string fileName,
+    std::string name,
+    std::string description
+) : GameEntity(std::move(id), std::move(createdAt), std::move(updatedAt), std::move(fileName)),
+    name(std::move(name)),
+    description(std::move(description)) {}
 
 /**
  * Destructor.

@@ -13,7 +13,7 @@ namespace fightdude {
  */
 class Ball : public GameEntity {
  public:
-  Ball(std::string id, std::string fileName);
+  Ball(std::string id, std::string createdAt, std::string updatedAt, std::string fileName);
   ~Ball() override;
 };
 } //namespace fightdude

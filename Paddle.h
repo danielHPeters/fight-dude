@@ -14,7 +14,7 @@ namespace fightdude {
  */
 class Paddle : public GameEntity {
  public:
-  Paddle(std::string id, std::string fileName);
+  Paddle(std::string id, std::string createdAt, std::string updatedAt, std::string fileName);
   ~Paddle() override;
 
   void render(sf::RenderWindow &renderWindow) override;

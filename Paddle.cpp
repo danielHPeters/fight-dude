@@ -7,10 +7,12 @@ namespace fightdude {
  * Constructor.
  *
  * @param id
+ * @param createAt
+ * @param updatedAt
  * @param fileName
  */
-Paddle::Paddle(std::string id, std::string fileName)
-    : GameEntity(std::move(id), std::move(fileName)),
+Paddle::Paddle(std::string id, std::string createAt, std::string updatedAt, std::string fileName)
+    : GameEntity(std::move(id), std::move(createAt), std::move(updatedAt), std::move(fileName)),
       velocity(0.0f),
       maxVelocity(600.0f),
       friction(0.9f) {

@@ -13,7 +13,7 @@ namespace fightdude {
  * @version 1.0
  */
 template<class Type>
-class Rectangle : Shape<Type> {
+class Rectangle : public Shape<Type> {
  public:
   Rectangle(std::uint8_t sidesCount, Type left, Type top, Type width, Type height);
   ~Rectangle();

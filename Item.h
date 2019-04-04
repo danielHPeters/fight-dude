@@ -11,9 +11,16 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class Item : GameEntity {
+class Item : public GameEntity {
  public:
-  Item(std::string id, std::string fileName, std::string name, std::string description);
+  Item(
+      std::string id,
+      std::string createdAt,
+      std::string updatedAt,
+      std::string fileName,
+      std::string name,
+      std::string description
+  );
   ~Item() override;
 
   void render(sf::RenderWindow &renderWindow) override;

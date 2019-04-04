@@ -12,7 +12,7 @@ namespace fightdude {
  */
 class Entity {
  public:
-  explicit Entity(std::string id, std::string createdAt, std::string updatedAt);
+  Entity(std::string id, std::string createdAt, std::string updatedAt);
   virtual ~Entity();
 
   std::string getId() const;

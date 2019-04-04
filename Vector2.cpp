@@ -3,6 +3,10 @@
 #include "Vector2.h"
 
 namespace fightdude {
+template class Vector2<int>;
+template class Vector2<float>;
+template class Vector2<double>;
+
 /**
  * Constructor.
  *
@@ -82,7 +86,7 @@ Type Vector2<Type>::getY() const {
  */
 template<class Type>
 Type Vector2<Type>::mag() const {
-  return std::sqrt(this->x * this->x + this->y * this > y);
+  return std::sqrt(this->x * this->x + this->y * this-> y);
 }
 
 /**

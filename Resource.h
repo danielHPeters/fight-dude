@@ -13,6 +13,6 @@ class Resource {
     STONE, WOOD, FOOD, IRON, GOLD
   };
 };
-} // namespace fightdude
+} //namespace fightdude
 
 #endif //FIGHT_DUDE_RESOURCE_H

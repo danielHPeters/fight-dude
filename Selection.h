@@ -13,9 +13,9 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class Selection : Entity {
+class Selection : public Entity {
  public:
-  explicit Selection(std::string id);
+  Selection(std::string id, std::string createdAt, std::string updatedAt);
   ~Selection() override;
 
  private:

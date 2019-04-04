@@ -12,9 +12,9 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class Player : Entity {
+class Player : public Entity {
  public:
-  Player(std::string id, std::string name);
+  Player(std::string id, std::string createdAt, std::string updatedAt, std::string name);
   ~Player() override;
 
   std::string getName() const;

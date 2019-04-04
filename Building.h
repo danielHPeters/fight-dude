@@ -13,7 +13,7 @@ namespace fightdude {
  * @version 1.0
  */
 class Building : GameEntity {
-  Building(std::string id, std::string name, std::string fileName);
+  Building(std::string id, std::string createdAt, std::string updatedAt, std::string name, std::string fileName);
   ~Building() override;
 
   std::string getName() const;

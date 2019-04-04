@@ -11,12 +11,15 @@ namespace fightdude {
  * @version 1.0
  */
 class Engine {
- private:
-  Input input;
-
  public:
+  Engine();
+  ~Engine();
+
   void start();
   void update();
+
+ private:
+  Input input;
 };
 } //namespace fightdude
 

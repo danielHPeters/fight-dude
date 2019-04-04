@@ -2,14 +2,28 @@
 #define FIGHT_DUDE_WORLD_H
 
 #include <string>
+#include "Vector2.h"
 #include "Entity.h"
 #include "GameEntity.h"
-#include "Vector2.h"
 #include "EntityManager.h"
 
 namespace fightdude {
-class World : GameEntity {
-  World(std::string id, std::string fileName, std::string name, int width, int height);
+/**
+ * World class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
+ */
+class World : public GameEntity {
+  World(
+      std::string id,
+      std::string createdAt,
+      std::string updatedAt,
+      std::string fileName,
+      std::string name,
+      int width,
+      int height
+  );
   ~World() override;
 
  private:

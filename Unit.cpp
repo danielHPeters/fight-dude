@@ -10,8 +10,8 @@ namespace fightdude {
  * @param fileName
  * @param type
  */
-Unit::Unit(std::string id, std::string fileName, Unit::Type type)
-    : GameEntity(std::move(id), std::move(fileName)), type(type) {}
+Unit::Unit(std::string id, std::string createdAt, std::string updatedAt, std::string fileName, Unit::Type type)
+    : GameEntity(std::move(id), std::move(createdAt), std::move(updatedAt), std::move(fileName)), type(type) {}
 
 /**
  * Destructor.

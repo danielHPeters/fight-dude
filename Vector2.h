@@ -5,36 +5,36 @@ namespace fightdude {
 /**
  * Custom 2D vector implementation.
  *
- * @tparam Type Numeric type
+ * @tparam T Numeric type
  * @author Daniel Peters
  * @version 1.0
  */
-template<class Type>
+template<class T>
 class Vector2 {
  public:
-  Vector2(Type x, Type y);
+  Vector2(T x, T y);
   ~Vector2();
 
-  bool operator==(const Vector2<Type> &vector);
-  Vector2<Type> operator+(const Vector2<Type> &vector);
-  void operator+=(const Vector2<Type> &vector);
+  bool operator==(const Vector2<T> &vector);
+  Vector2<T> operator+(const Vector2<T> &vector);
+  void operator+=(const Vector2<T> &vector);
 
-  Type getX() const;
-  Type getY() const;
-  Type mag() const;
-  Type dot(Vector2<Type> vector) const;
-  void lerp(Vector2<Type> vector, Type normal);
-  void add(Vector2<Type> &vector);
-  void add(Type x, Type y);
-  void subtract(Vector2<Type> &vector);
-  void subtract(Type x, Type y);
-  void multitply(Type scalar);
-  void divide(Type scalar);
+  T getX() const;
+  T getY() const;
+  T mag() const;
+  T dot(Vector2<T> vector) const;
+  void lerp(Vector2<T> vector, T normal);
+  void add(Vector2<T> &vector);
+  void add(T x, T y);
+  void subtract(Vector2<T> &vector);
+  void subtract(T x, T y);
+  void multitply(T scalar);
+  void divide(T scalar);
   void normalize();
 
  private:
-  Type x;
-  Type y;
+  T x;
+  T y;
 };
 } //namespace fightdude
 

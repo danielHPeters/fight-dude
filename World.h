@@ -21,13 +21,13 @@ class World : public GameEntity {
       std::string updatedAt,
       std::string fileName,
       std::string name,
-      int width,
-      int height
+      std::int32_t width,
+      std::int32_t height
   );
   ~World() override;
 
  private:
-  Vector2<int> size;
+  Vector2<std::int32_t> size;
   std::string name;
 };
 } //namespace fightdude

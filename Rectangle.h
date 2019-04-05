@@ -8,30 +8,30 @@ namespace fightdude {
 /**
  * Rectangle shape used for collision checking.
  *
- * @tparam Type Numeric type
+ * @tparam T Numeric type
  * @author Daniel Peters
  * @version 1.0
  */
-template<class Type>
-class Rectangle : public Shape<Type> {
+template<class T>
+class Rectangle : public Shape<T> {
  public:
-  Rectangle(std::uint8_t sidesCount, Type left, Type top, Type width, Type height);
+  Rectangle(std::uint8_t sidesCount, T left, T top, T width, T height);
   ~Rectangle();
 
-  void set(Type left, Type top, Type width, Type height);
+  void set(T left, T top, T width, T height);
   bool within(Rectangle &other) const;
   bool overlaps(Rectangle &other) const;
-  Type getLeft() const;
-  Type getTop() const;
-  Vector2<Type> getPosition() const;
-  Type getWidth() const;
-  Type getHeight() const;
+  T getLeft() const;
+  T getTop() const;
+  Vector2<T> getPosition() const;
+  T getWidth() const;
+  T getHeight() const;
 
  private:
-  Type left;
-  Type top;
-  Type width;
-  Type height;
+  T left;
+  T top;
+  T width;
+  T height;
 };
 } //namespace fightdude
 

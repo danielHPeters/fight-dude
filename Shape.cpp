@@ -4,28 +4,28 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @tparam Type
+ * @tparam T
  * @param sidesCount
  */
-template<class Type>
-Shape<Type>::Shape(std::uint8_t sidesCount) : sidesCount(sidesCount) {}
+template<class T>
+Shape<T>::Shape(std::uint8_t sidesCount) : sidesCount(sidesCount) {}
 
 /**
  * Destructor.
  *
- * @tparam Type
+ * @tparam T
  */
-template<class Type>
-Shape<Type>::~Shape() = default;
+template<class T>
+Shape<T>::~Shape() = default;
 
 /**
  * Getter for sidesCount.
  *
- * @tparam Type Numeric type
+ * @tparam T Numeric type
  * @return The number of sizes of this shape
  */
-template<class Type>
-std::uint8_t Shape<Type>::getSidesCount() const {
+template<class T>
+std::uint8_t Shape<T>::getSidesCount() const {
   return sidesCount;
 }
 } //namespace fightdude

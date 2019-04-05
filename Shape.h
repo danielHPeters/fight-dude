@@ -7,11 +7,11 @@ namespace fightdude {
 /**
  * Base shape class.
  *
- * @tparam Type
+ * @tparam T
  * @author Daniel Peters
  * @version 1.0
  */
-template<class Type>
+template<class T>
 class Shape {
  public:
   explicit Shape(std::uint8_t sidesCount);

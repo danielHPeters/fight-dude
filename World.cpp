@@ -19,8 +19,8 @@ World::World(
     std::string updatedAt,
     std::string fileName,
     std::string name,
-    int width,
-    int height
+    std::int32_t width,
+    std::int32_t height
 ) : GameEntity(std::move(id), std::move(createdAt), std::move(updatedAt), std::move(fileName)),
     name(std::move(name)),
     size(width, height) {}

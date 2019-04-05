@@ -39,7 +39,7 @@ class QuadTree {
   std::uint8_t level;
   std::uint8_t maxObjects;
   std::uint8_t maxLevels;
-  Rectangle<int32_t> hitBox;
+  Rectangle<std::int32_t> hitBox;
   std::vector<T> objects;
   std::vector<QuadTree<T>> nodes;
 };

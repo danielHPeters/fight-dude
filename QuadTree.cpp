@@ -80,7 +80,7 @@ void QuadTree<T>::insert(T element) {}
  * Insert a multiple objects of type T.
  *
  * @tparam T
- * @param objects
+ * @param elements
  */
 template<class T>
 void QuadTree<T>::insert(std::vector<T> elements) {

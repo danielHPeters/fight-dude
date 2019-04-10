@@ -5,7 +5,7 @@
 
 namespace fightdude {
 /**
- * Constructor.
+ * Constructor. Sets game state to Game::State::UNINITIALIZED
  */
 Game::Game(): gameState(Game::State::UNINITIALIZED) {}
 
@@ -26,8 +26,8 @@ void Game::start() {
 
     player1->setPosition(sf::Vector2<float>((1024.0f / 2.0f) - 45.0f, 700.0f));
     ball->setPosition(sf::Vector2<float>(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));
-    gameObjectManager.add("ball", ball);
-    gameObjectManager.add("paddle1", player1);
+    entityManager.add("ball", ball);
+    entityManager.add("paddle1", player1);
     gameState = Game::State::SHOWING_SPLASH;
 
     while (!isExiting()) {
@@ -40,7 +40,7 @@ void Game::start() {
 /**
  * Check if game exit is requested.
  *
- * @return
+ * @return True if game state is set to Game::State::EXITING
  */
 bool Game::isExiting() {
   return gameState == Game::State::EXITING;
@@ -64,8 +64,8 @@ void Game::gameLoop() {
 
       while (mainWindow.pollEvent(currentEvent)) {
         mainWindow.clear(sf::Color(0, 0, 0));
-        gameObjectManager.drawAll(mainWindow);
-        gameObjectManager.updateAll();
+        entityManager.drawAll(mainWindow);
+        entityManager.updateAll();
         mainWindow.display();
 
         if (currentEvent.type == sf::Event::EventType::Closed) {
@@ -117,16 +117,18 @@ void Game::showMenu() {
 }
 
 /**
+ * Getter for the game input manager
  *
- * @return
+ * @return The game input manager
  */
 InputManager Game::getInputManager() {
   return inputManager;
 }
 
 /**
+ *  Getter for the main game window.
  *
- * @return
+ * @return Main game window
  */
 sf::RenderWindow &Game::getWindow() {
   return mainWindow;

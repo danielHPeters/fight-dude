@@ -11,8 +11,8 @@ namespace fightdude {
  * @param height
  */
 template<class T>
-Rectangle<T>::Rectangle(std::uint8_t sidesCount, T left, T top, T width, T height)
-    : Shape<T>(sidesCount), left(left), top(top), width(width), height(height) {}
+Rectangle<T>::Rectangle(T left, T top, T width, T height)
+    : Shape<T>(4), left(left), top(top), width(width), height(height) {}
 
 /**
  * Destructor.

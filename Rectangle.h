@@ -15,7 +15,7 @@ namespace fightdude {
 template<class T>
 class Rectangle : public Shape<T> {
  public:
-  Rectangle(std::uint8_t sidesCount, T left, T top, T width, T height);
+  Rectangle(T left, T top, T width, T height);
   ~Rectangle();
 
   void set(T left, T top, T width, T height);

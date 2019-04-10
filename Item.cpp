@@ -4,10 +4,12 @@
 namespace fightdude {
 /**
  *
- * @param id
- * @param fileName
- * @param name
- * @param description
+ * @param id            Entity id
+ * @param createdAt     Create timestamp
+ * @param updatedAt     Update timestamp
+ * @param fileName      Sprite filename
+ * @param name          Item name
+ * @param description   Item description
  */
 Item::Item(
     std::string id,
@@ -26,32 +28,36 @@ Item::Item(
 Item::~Item() = default;
 
 /**
+ * Render item on a window.
  *
- * @param renderWindow
+ * @param renderWindow Window to render the item on
  */
 void Item::render(sf::RenderWindow &renderWindow) {
   GameEntity::render(renderWindow);
 }
 
 /**
+ * Update internal item data.
  *
- * @param elapsedTime
+ * @param elapsedTime Time elapsed between this and last update
  */
 void Item::update(double elapsedTime) {
   GameEntity::update(elapsedTime);
 }
 
 /**
+ * Getter for the item name.
  *
- * @return
+ * @return Item name
  */
 std::string Item::getName() const {
   return name;
 }
 
 /**
+ * Getter for the item description.
  *
- * @return
+ * @return Item description
  */
 std::string Item::getDescription() const {
   return description;

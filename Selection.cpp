@@ -5,9 +5,9 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param id
- * @param createdAt
- * @param updatedAt
+ * @param id        Entity id
+ * @param createdAt Create timestamp
+ * @param updatedAt Update timestamp
  */
 Selection::Selection(std::string id, std::string createdAt, std::string updatedAt)
     : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)) {}

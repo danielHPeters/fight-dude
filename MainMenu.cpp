@@ -2,9 +2,17 @@
 
 namespace fightdude {
 /**
+ * MenuItem struct constructor.
  *
- * @param window
- * @return
+ * @param action Item action
+ */
+MainMenu::MenuItem::MenuItem(MainMenu::Action action) : action(action) {}
+
+/**
+ * Display the main menu.
+ *
+ * @param window    The window to draw the menu on
+ * @return          Selected MainMenu::Action
  */
 MainMenu::Action MainMenu::show(sf::RenderWindow &window) {
   sf::Texture texture;
@@ -33,14 +41,15 @@ MainMenu::Action MainMenu::show(sf::RenderWindow &window) {
 }
 
 /**
+ * Handle menu clicks.
  *
- * @param x
- * @param y
- * @return
+ * @param x Mouse click x
+ * @param y Mouse click y
+ * @return  Selected action
  */
 MainMenu::Action MainMenu::handleClick(int x, int y) {
   for (auto &menuItem : menuItems) {
-    sf::Rect<int> menuItemRect = menuItem.rect;
+    sf::IntRect menuItemRect = menuItem.rect;
 
     if (menuItemRect.contains(sf::Vector2<int>(x, y))) {
       return menuItem.action;
@@ -51,9 +60,10 @@ MainMenu::Action MainMenu::handleClick(int x, int y) {
 }
 
 /**
+ * Menu click listener.
  *
- * @param window
- * @return
+ * @param window    The menu window
+ * @return          Handle menu action
  */
 MainMenu::Action MainMenu::getMenuResponse(sf::RenderWindow &window) {
   sf::Event menuEvent{};
@@ -63,6 +73,7 @@ MainMenu::Action MainMenu::getMenuResponse(sf::RenderWindow &window) {
       if (menuEvent.type == sf::Event::EventType::MouseButtonPressed) {
         return handleClick(menuEvent.mouseButton.x, menuEvent.mouseButton.y);
       }
+
       if (menuEvent.type == sf::Event::EventType::Closed) {
         return MainMenu::Action::EXIT;
       }
@@ -71,6 +82,4 @@ MainMenu::Action MainMenu::getMenuResponse(sf::RenderWindow &window) {
 
   return MainMenu::Action::NONE;
 }
-
-MainMenu::MenuItem::MenuItem(MainMenu::Action action) : action(action) {}
 } //namespace fightdude

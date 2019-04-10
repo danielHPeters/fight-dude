@@ -4,7 +4,7 @@ namespace fightdude {
 /**
  * Display SplashScreen.
  *
- * @param window
+ * @param window Splash screen window
  */
 void SplashScreen::show(sf::RenderWindow &window) {
   sf::Texture texture;

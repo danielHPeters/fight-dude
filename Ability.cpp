@@ -5,7 +5,7 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param name
+ * @param name Name of the ability
  */
 Ability::Ability(std::string name): name(std::move(name)) {}
 
@@ -17,7 +17,7 @@ Ability::~Ability() = default;
 /**
  * Get the name of an action.
  *
- * @return
+ * @return Action name
  */
 std::string Ability::getName() const {
   return name;

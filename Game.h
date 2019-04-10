@@ -29,7 +29,7 @@ class Game {
 
   Game::State gameState;
   sf::RenderWindow mainWindow;
-  EntityManager gameObjectManager;
+  EntityManager entityManager;
   InputManager inputManager{};
 
   bool isExiting();

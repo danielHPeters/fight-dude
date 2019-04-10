@@ -5,10 +5,10 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param id
- * @param createdAt
- * @param updatedAt
- * @param fileName
+ * @param id        Entity id
+ * @param createdAt Create timestamp
+ * @param updatedAt Update timestamp
+ * @param fileName  Sprite filename
  */
 GameEntity::GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName)
     : Entity(std::move(id), std::move(createdAt), std::move(createdAt)), fileName(std::move(fileName)), loaded(false) {}
@@ -19,20 +19,20 @@ GameEntity::GameEntity(std::string id, std::string createdAt, std::string update
 GameEntity::~GameEntity() = default;
 
 /**
- *
- * @param fileName
+ * Load the sprite of this game entity.
  */
 void GameEntity::load() {
-  this->loaded = texture.loadFromFile(this->fileName);
+  loaded = texture.loadFromFile(fileName);
 
-  if (this->loaded) {
+  if (loaded) {
     sprite.setTexture(texture);
   }
 }
 
 /**
+ * Render method of the game entity.
  *
- * @param window
+ * @param window Game window to render the game entity on
  */
 void GameEntity::render(sf::RenderWindow &window) {
   if (loaded) {
@@ -41,38 +41,44 @@ void GameEntity::render(sf::RenderWindow &window) {
 }
 
 /**
+ * Update internal data like position, size etc. of this game entity.
  *
- * @param elapsedTime
+ * @param elapsedTime Time since last update
  */
 void GameEntity::update(double elapsedTime) {}
 
 /**
+ * Getter for the vector position of this game entity.
  *
- * @return
+ * @return Position of the entity or an empty vector if the sprite did not load
  */
 sf::Vector2f GameEntity::getPosition() const {
   return loaded ? sprite.getPosition() : sf::Vector2f();
 }
 
 /**
+ * Getter for the sprite of the game entity.
  *
- * @return
+ * @return Sprite of the game entity
  */
 sf::Sprite &GameEntity::getSprite() {
   return sprite;
 }
 
 /**
+ * Checks if sprite asset has been loaded.
  *
- * @return
+ * @return True if the sprite has been successfully loaded.
  */
 bool GameEntity::isLoaded() const {
   return loaded;
 }
 
 /**
+ * Set position of the internal sprite.
+ * Does nothing if sprite loading failed.
  *
- * @param position
+ * @param position New position
  */
 void GameEntity::setPosition(sf::Vector2f position) {
   if (loaded) {

@@ -20,7 +20,7 @@ class MainMenu {
 
   struct MenuItem {
     explicit MenuItem(MainMenu::Action action);
-    sf::Rect<int> rect;
+    sf::IntRect rect;
     MainMenu::Action action;
   };
 

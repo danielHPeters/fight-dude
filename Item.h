@@ -6,7 +6,7 @@
 
 namespace fightdude {
 /**
- * Item GameObject class.
+ * Item GameEntity class.
  *
  * @author Daniel Peters
  * @version 1.0

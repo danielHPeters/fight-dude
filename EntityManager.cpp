@@ -16,8 +16,8 @@ EntityManager::~EntityManager() {
 /**
  * Add a managed entity.
  *
- * @param name
- * @param gameEntity
+ * @param name          Entity name
+ * @param gameEntity    Pointer to game entity
  */
 void EntityManager::add(const std::string &name, GameEntity *gameEntity) {
   gameEntities.insert(std::pair<std::string, GameEntity *>(name, gameEntity));
@@ -26,7 +26,7 @@ void EntityManager::add(const std::string &name, GameEntity *gameEntity) {
 /**
  * Remove a managed entity.
  *
- * @param name
+ * @param name  Entity name
  */
 void EntityManager::remove(const std::string &name) {
   auto results = gameEntities.find(name);
@@ -38,10 +38,10 @@ void EntityManager::remove(const std::string &name) {
 }
 
 /**
- * Get entity.
+ * Get an entity by name.
  *
- * @param name
- * @return
+ * @param name  Name of the entity
+ * @return      The found entity or nullptr when not found
  */
 GameEntity *EntityManager::get(const std::string &name) const {
   auto results = gameEntities.find(name);
@@ -50,17 +50,18 @@ GameEntity *EntityManager::get(const std::string &name) const {
 }
 
 /**
+ * Get the number of objects in this EntityManager.
  *
  * @return Number of objects
  */
-int EntityManager::getObjectCount() const {
+std::size_t EntityManager::getObjectCount() const {
   return gameEntities.size();
 }
 
 /**
  * Render all entities.
  *
- * @param renderWindow
+ * @param renderWindow Window to render the entities on
  */
 void EntityManager::drawAll(sf::RenderWindow &renderWindow) {
   auto iterator = gameEntities.begin();

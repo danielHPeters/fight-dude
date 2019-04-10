@@ -4,12 +4,18 @@
 #include "Vector2.h"
 
 namespace fightdude {
-template class Vector2<std::int8_t>;
-template class Vector2<std::int16_t>;
-template class Vector2<std::int32_t>;
-template class Vector2<std::int64_t>;
-template class Vector2<float>;
-template class Vector2<double>;
+template
+class Vector2<std::int8_t>;
+template
+class Vector2<std::int16_t>;
+template
+class Vector2<std::int32_t>;
+template
+class Vector2<std::int64_t>;
+template
+class Vector2<float>;
+template
+class Vector2<double>;
 
 /**
  * Constructor.
@@ -38,7 +44,7 @@ Vector2<T>::~Vector2() = default;
  */
 template<class T>
 bool Vector2<T>::operator==(const Vector2<T> &vector) {
-  return this->x == vector.x && this->y == vector.y;
+  return x == vector.x && y == vector.y;
 }
 
 /**
@@ -49,7 +55,7 @@ bool Vector2<T>::operator==(const Vector2<T> &vector) {
  */
 template<class T>
 Vector2<T> Vector2<T>::operator+(const Vector2<T> &vector) {
-  return Vector2<T>(this->x + vector.x, this->y + vector.y);
+  return Vector2<T>(x + vector.x, y + vector.y);
 }
 
 /**
@@ -59,8 +65,8 @@ Vector2<T> Vector2<T>::operator+(const Vector2<T> &vector) {
  */
 template<class T>
 void Vector2<T>::operator+=(const Vector2<T> &vector) {
-  this->x = vector.x;
-  this->y = vector.y;
+  x = vector.x;
+  y = vector.y;
 }
 
 /**
@@ -90,7 +96,7 @@ T Vector2<T>::getY() const {
  */
 template<class T>
 T Vector2<T>::mag() const {
-  return std::sqrt(this->x * this->x + this->y * this-> y);
+  return std::sqrt(x * x + y * y);
 }
 
 /**
@@ -102,7 +108,7 @@ T Vector2<T>::mag() const {
  */
 template<class T>
 T Vector2<T>::dot(Vector2<T> vector) const {
-  return this->x * vector.x + this->y * vector.y;
+  return x * vector.x + y * vector.y;
 }
 
 /**
@@ -114,8 +120,8 @@ T Vector2<T>::dot(Vector2<T> vector) const {
  */
 template<class T>
 void Vector2<T>::lerp(Vector2<T> vector, T normal) {
-  this->x = (1 - normal) * this->x + normal * vector.x;
-  this->y = (1 - normal) * this->y + normal * vector.y;
+  x = (1 - normal) * x + normal * vector.x;
+  y = (1 - normal) * y + normal * vector.y;
 }
 
 /**
@@ -125,8 +131,8 @@ void Vector2<T>::lerp(Vector2<T> vector, T normal) {
  */
 template<class T>
 void Vector2<T>::add(Vector2 &vector) {
-  this->x += vector.x;
-  this->y += vector.y;
+  x += vector.x;
+  y += vector.y;
 }
 
 /**
@@ -148,8 +154,8 @@ void Vector2<Type>::add(Type x, Type y) {
  */
 template<class T>
 void Vector2<T>::subtract(Vector2<T> &vector) {
-  this->x -= vector.x;
-  this->y -= vector.y;
+  x -= vector.x;
+  y -= vector.y;
 }
 
 /**
@@ -171,8 +177,8 @@ void Vector2<T>::subtract(T x, T y) {
  */
 template<class T>
 void Vector2<T>::multitply(T scalar) {
-  this->x *= scalar;
-  this->y *= scalar;
+  x *= scalar;
+  y *= scalar;
 }
 
 /**
@@ -186,8 +192,8 @@ void Vector2<T>::divide(T scalar) {
     throw std::exception();
   }
 
-  this->x /= scalar;
-  this->y /= scalar;
+  x /= scalar;
+  y /= scalar;
 }
 
 /**
@@ -196,6 +202,6 @@ void Vector2<T>::divide(T scalar) {
  */
 template<class T>
 void Vector2<T>::normalize() {
-  this->divide(mag());
+  divide(mag());
 }
 } //namespace fightdude

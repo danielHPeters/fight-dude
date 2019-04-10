@@ -5,9 +5,11 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param id
- * @param name
- * @param size
+ * @param id        Entity id
+ * @param createdAt Create timestamp
+ * @param updatedAt Update timestamp
+ * @param name      Filename
+ * @param size      Filesize
  */
 File::File(std::string id, std::string createdAt, std::string updatedAt, std::string name, std::size_t size)
     : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)), name(std::move(name)), size(size) {}
@@ -18,16 +20,18 @@ File::File(std::string id, std::string createdAt, std::string updatedAt, std::st
 File::~File() = default;
 
 /**
+ * Getter for the name of the file.
  *
- * @return
+ * @return  Filename
  */
 std::string File::getName() const {
   return name;
 }
 
 /**
+ * Getter for the file size.
  *
- * @return
+ * @return Filesize
  */
 std::size_t File::getSize() const {
   return size;

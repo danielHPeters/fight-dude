@@ -12,16 +12,18 @@ InputManager::InputManager() = default;
 InputManager::~InputManager() = default;
 
 /**
+ * Getter for the keyboard device instance.
  *
- * @return
+ * @return Keyboard instance
  */
 sf::Keyboard &InputManager::getKeyboard() {
   return keyboard;
 }
 
 /**
+ * Getter for the mouse device instance.
  *
- * @return
+ * @return Mouse instance
  */
 sf::Mouse &InputManager::getMouse() {
   return mouse;

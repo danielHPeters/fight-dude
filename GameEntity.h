@@ -8,7 +8,7 @@
 
 namespace fightdude {
 /**
- * GameEntity base class.
+ * Game entity base class.
  *
  * @author Daniel Peters
  * @version 1.0

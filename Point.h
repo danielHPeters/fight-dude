@@ -5,9 +5,9 @@
 
 namespace fightdude {
 /**
- * Simple x, y coordinates holder
+ * Simple x, y coordinates holder.
  *
- * @tparam T
+ * @tparam T Numeric type
  * @author Daniel Peters
  * @version 1.0
  */

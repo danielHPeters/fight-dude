@@ -104,12 +104,12 @@ void QuadTree<T>::split() {}
  */
 template<class T>
 void QuadTree<T>::clear() {
-  this->objects.clear();
+  objects.clear();
 
   for (QuadTree<T> &node : nodes) {
     node.clear();
   }
 
-  this->nodes.clear();
+  nodes.clear();
 }
 } //namespace fightdude

@@ -6,10 +6,10 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param id
- * @param createAt
- * @param updatedAt
- * @param fileName
+ * @param id        Entity id
+ * @param createAt  Create timestamp
+ * @param updatedAt Update timestamp
+ * @param fileName  Sprite filename
  */
 Paddle::Paddle(std::string id, std::string createAt, std::string updatedAt, std::string fileName)
     : GameEntity(std::move(id), std::move(createAt), std::move(updatedAt), std::move(fileName)),
@@ -19,10 +19,10 @@ Paddle::Paddle(std::string id, std::string createAt, std::string updatedAt, std:
   load();
   assert(isLoaded());
 
-  float width = this->sprite.getGlobalBounds().width / 2;
-  float height = this->sprite.getGlobalBounds().height / 2;
+  float width = sprite.getGlobalBounds().width / 2;
+  float height = sprite.getGlobalBounds().height / 2;
 
-  this->sprite.setOrigin(width, height);
+  sprite.setOrigin(width, height);
 }
 
 /**
@@ -31,8 +31,9 @@ Paddle::Paddle(std::string id, std::string createAt, std::string updatedAt, std:
 Paddle::~Paddle() = default;
 
 /**
+ * Paddle main render method.
  *
- * @param renderWindow
+ * @param renderWindow Window on which the paddle should be rendered
  */
 void Paddle::render(sf::RenderWindow &renderWindow) {
   GameEntity::render(renderWindow);
@@ -69,7 +70,7 @@ void Paddle::update(double elapsedTime) {
 
   velocity *= friction;
 
-  sf::Vector2f position = this->getPosition();
+  sf::Vector2f position = getPosition();
 
   bool left = position.x < (getSprite().getGlobalBounds().width / 2.0f);
   bool right = position.x > (1024.0f - getSprite().getGlobalBounds().width / 2.0f);
@@ -82,8 +83,9 @@ void Paddle::update(double elapsedTime) {
 }
 
 /**
+ * Getter for paddle velocity.
  *
- * @return
+ * @return Current velocity
  */
 double Paddle::getVelocity() const {
   return velocity;

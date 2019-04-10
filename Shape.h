@@ -7,7 +7,7 @@ namespace fightdude {
 /**
  * Base shape class.
  *
- * @tparam T
+ * @tparam T Numeric type
  * @author Daniel Peters
  * @version 1.0
  */

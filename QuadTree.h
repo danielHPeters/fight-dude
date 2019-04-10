@@ -9,7 +9,7 @@ namespace fightdude {
 /**
  * QuadTree class used for speeding up collision detection.
  *
- * @tparam T
+ * @tparam T Numeric type
  * @author Daniel Peters
  * @version 1.0
  */

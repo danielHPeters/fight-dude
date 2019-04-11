@@ -15,6 +15,7 @@ namespace fightdude {
  * @version 1.0
  */
 class World : public GameEntity {
+ public:
   World(
       std::string id,
       std::string createdAt,

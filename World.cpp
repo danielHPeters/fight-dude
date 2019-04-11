@@ -5,13 +5,13 @@ namespace fightdude {
 /**
  * Constructor.
  *
- * @param id
- * @param createdAt
- * @param updatedAt
- * @param fileName
- * @param name
- * @param width
- * @param height
+ * @param id        Entity id
+ * @param createdAt Create timestamp
+ * @param updatedAt Update timestamp
+ * @param fileName  Sprite filename
+ * @param name      World name
+ * @param width     World width
+ * @param height    World height
  */
 World::World(
     std::string id,

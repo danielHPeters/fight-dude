@@ -12,6 +12,7 @@ namespace fightdude {
  * @version 1.0
  */
 class User : Entity {
+ public:
   User(
       std::string id,
       std::string createdAt,

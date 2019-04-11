@@ -51,7 +51,7 @@ MainMenu::Action MainMenu::handleClick(int x, int y) {
   for (auto &menuItem : menuItems) {
     sf::IntRect menuItemRect = menuItem.rect;
 
-    if (menuItemRect.contains(sf::Vector2<int>(x, y))) {
+    if (menuItemRect.contains(sf::Vector2i(x, y))) {
       return menuItem.action;
     }
   }

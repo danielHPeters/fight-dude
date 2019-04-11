@@ -40,8 +40,9 @@ void Paddle::render(sf::RenderWindow &renderWindow) {
 }
 
 /**
+ * Update paddle position, velocity etc.
  *
- * @param elapsedTime
+ * @param elapsedTime Time elapsed between last and current update
  */
 void Paddle::update(double elapsedTime) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {

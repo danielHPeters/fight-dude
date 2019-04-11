@@ -20,9 +20,9 @@ class Vector2<double>;
 /**
  * Constructor.
  *
- * @tparam T
- * @param x
- * @param y
+ * @tparam T    Numeric type
+ * @param x     X coordinate
+ * @param y     Y coordinate
  */
 template<class T>
 Vector2<T>::Vector2(T x, T y) : x(x), y(y) {}
@@ -30,7 +30,7 @@ Vector2<T>::Vector2(T x, T y) : x(x), y(y) {}
 /**
  * Destructor.
  *
- * @tparam T
+ * @tparam T Numeric type
  */
 template<class T>
 Vector2<T>::~Vector2() = default;
@@ -38,9 +38,9 @@ Vector2<T>::~Vector2() = default;
 /**
  * Equality check operator.
  *
- * @tparam T
- * @param vector
- * @return
+ * @tparam T        Numeric type
+ * @param vector    Other vector
+ * @return          True if x and y coordinates of both vectors are equal
  */
 template<class T>
 bool Vector2<T>::operator==(const Vector2<T> &vector) {
@@ -48,10 +48,11 @@ bool Vector2<T>::operator==(const Vector2<T> &vector) {
 }
 
 /**
+ * Addition operator.
  *
- * @tparam T
- * @param vector
- * @return
+ * @tparam T        Numeric type
+ * @param vector    Other vector
+ * @return          New vector with x and y values of combined vectors
  */
 template<class T>
 Vector2<T> Vector2<T>::operator+(const Vector2<T> &vector) {
@@ -60,8 +61,8 @@ Vector2<T> Vector2<T>::operator+(const Vector2<T> &vector) {
 
 /**
  *
- * @tparam T
- * @param vector
+ * @tparam T        Numeric type
+ * @param vector    Other vector
  */
 template<class T>
 void Vector2<T>::operator+=(const Vector2<T> &vector) {
@@ -70,9 +71,10 @@ void Vector2<T>::operator+=(const Vector2<T> &vector) {
 }
 
 /**
+ * Getter for the x coordinate value.
  *
- * @tparam T
- * @return
+ * @tparam T    Numeric type
+ * @return      X coordinate value
  */
 template<class T>
 T Vector2<T>::getX() const {
@@ -80,9 +82,10 @@ T Vector2<T>::getX() const {
 }
 
 /**
+ * Getter for the y coordinate value.
  *
- * @tparam T
- * @return
+ * @tparam T    Numeric type
+ * @return      Y coordinate value
  */
 template<class T>
 T Vector2<T>::getY() const {
@@ -91,7 +94,7 @@ T Vector2<T>::getY() const {
 
 /**
  *
- * @tparam T
+ * @tparam T    Numeric type
  * @return
  */
 template<class T>
@@ -102,7 +105,7 @@ T Vector2<T>::mag() const {
 /**
  * Get the dot product between this vector and another vector.
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param vector
  * @return
  */
@@ -114,7 +117,7 @@ T Vector2<T>::dot(Vector2<T> vector) const {
 /**
  * Linear interpolation method.
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param vector
  * @param normal
  */
@@ -126,7 +129,7 @@ void Vector2<T>::lerp(Vector2<T> vector, T normal) {
 
 /**
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param vector
  */
 template<class T>
@@ -137,19 +140,19 @@ void Vector2<T>::add(Vector2 &vector) {
 
 /**
  *
- * @tparam Type
+ * @tparam T    Numeric type
  * @param x
  * @param y
  */
-template<class Type>
-void Vector2<Type>::add(Type x, Type y) {
+template<class T>
+void Vector2<T>::add(T x, T y) {
   this->x += x;
   this->y += y;
 }
 
 /**
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param vector
  */
 template<class T>
@@ -160,7 +163,7 @@ void Vector2<T>::subtract(Vector2<T> &vector) {
 
 /**
  *
- * @tparam T
+ * @tparam T    Numeric type
  * @param x
  * @param y
  */
@@ -172,7 +175,7 @@ void Vector2<T>::subtract(T x, T y) {
 
 /**
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param scalar
  */
 template<class T>
@@ -183,7 +186,7 @@ void Vector2<T>::multitply(T scalar) {
 
 /**
  *
- * @tparam T
+ * @tparam T        Numeric type
  * @param scalar
  */
 template<class T>
@@ -198,7 +201,7 @@ void Vector2<T>::divide(T scalar) {
 
 /**
  *
- * @tparam T
+ * @tparam T    Numeric type
  */
 template<class T>
 void Vector2<T>::normalize() {

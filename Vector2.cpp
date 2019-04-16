@@ -179,7 +179,7 @@ void Vector2<T>::subtract(T x, T y) {
  * @param scalar
  */
 template<class T>
-void Vector2<T>::multitply(T scalar) {
+void Vector2<T>::multiply(T scalar) {
   x *= scalar;
   y *= scalar;
 }

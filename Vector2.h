@@ -28,7 +28,7 @@ class Vector2 {
   void add(T x, T y);
   void subtract(Vector2<T> &vector);
   void subtract(T x, T y);
-  void multitply(T scalar);
+  void multiply(T scalar);
   void divide(T scalar);
   void normalize();
 

@@ -11,7 +11,7 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class Entity : public Serializable<Entity> {
+class Entity {
  public:
   Entity(std::string id, std::string createdAt, std::string updatedAt);
   virtual ~Entity();

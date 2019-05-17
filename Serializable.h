@@ -11,9 +11,7 @@ namespace fightdude {
  */
 template<class T>
 class Serializable {
- public:
-  virtual void serialize(T data) = 0;
-  virtual T deserialize() = 0;
+
 };
 } //namespace fightdude
 

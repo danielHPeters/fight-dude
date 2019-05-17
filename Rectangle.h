@@ -19,6 +19,7 @@ class Rectangle : public Shape<T> {
   ~Rectangle();
 
   T getArea() override;
+
   void set(T left, T top, T width, T height);
   bool within(Rectangle &other) const;
   bool overlaps(Rectangle &other) const;

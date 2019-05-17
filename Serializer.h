@@ -14,14 +14,14 @@ class Serializer {
     JSON, XML, YAML
   };
 
-  explicit Serializer(Format format = Format::JSON);
+  explicit Serializer(Serializer::Format format = Serializer::Format::JSON);
   ~Serializer();
 
   T load();
   void save(T &entity);
 
  private:
-  Format format;
+  Serializer::Format format;
 };
 } //namespace fightdude
 

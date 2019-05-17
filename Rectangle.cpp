@@ -39,6 +39,11 @@ void Rectangle<T>::set(T left, T top, T width, T height) {
   this->height = height;
 }
 
+template<class T>
+T Rectangle<T>::getArea() {
+  return width * height;
+}
+
 /**
  * Check if this rectangle is within the area of other rectangle.
  *

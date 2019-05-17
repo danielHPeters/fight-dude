@@ -2,6 +2,7 @@
 #define FIGHT_DUDE_ENTITY_H
 
 #include <string>
+#include "Serializable.h"
 
 namespace fightdude {
 /**
@@ -10,7 +11,7 @@ namespace fightdude {
  * @author Daniel Peters
  * @version 1.0
  */
-class Entity {
+class Entity : public Serializable<Entity> {
  public:
   Entity(std::string id, std::string createdAt, std::string updatedAt);
   virtual ~Entity();

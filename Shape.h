@@ -17,6 +17,8 @@ class Shape {
   explicit Shape(std::uint8_t sidesCount);
   ~Shape();
 
+  virtual T getArea() = 0;
+
  protected:
   std::uint8_t getSidesCount() const;
 

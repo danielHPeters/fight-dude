@@ -6,6 +6,8 @@ namespace fightdude {
  * Basic serializer class.
  *
  * @tparam T Entity Type
+ * @author Daniel Peters
+ * @version 1.0
  */
 template <class T>
 class Serializer {

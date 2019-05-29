@@ -10,8 +10,8 @@ namespace fightdude {
  * @param updatedAt Update timestamp
  * @param fileName  Sprite filename
  */
-GameEntity::GameEntity(std::string id, std::string createdAt, std::string updatedAt, std::string fileName)
-    : Entity(std::move(id), std::move(createdAt), std::move(createdAt)), fileName(std::move(fileName)), loaded(false) {}
+GameEntity::GameEntity(std::string id, std::string fileName)
+    : Entity(std::move(id)), fileName(std::move(fileName)), loaded(false) {}
 
 /**
  * Destructor.

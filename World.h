@@ -18,8 +18,6 @@ class World : public GameEntity {
  public:
   World(
       std::string id,
-      std::string createdAt,
-      std::string updatedAt,
       std::string fileName,
       std::string name,
       std::int32_t width,

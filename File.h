@@ -14,7 +14,7 @@ namespace fightdude {
  */
 class File : public Entity {
  public:
-  File(std::string id, std::string createdAt, std::string updatedAt, std::string name, std::size_t size = 0);
+  File(std::string id, std::string name, std::size_t size = 0);
   ~File() override;
 
   std::string getName() const;

@@ -6,8 +6,6 @@ namespace fightdude {
  * Constructor.
  *
  * @param id        Entity id
- * @param createdAt Entity create timestamp as string
- * @param updatedAt Entity update timestamp as string
  * @param name      Family name of user
  * @param firstName First name of user
  * @param username  Login name of user
@@ -16,14 +14,12 @@ namespace fightdude {
  */
 User::User(
     std::string id,
-    std::string createdAt,
-    std::string updatedAt,
     std::string name,
     std::string firstName,
     std::string username,
     std::string email,
     std::string password
-) : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)),
+) : Entity(std::move(id)),
     name(std::move(name)),
     firstName(std::move(firstName)),
     username(std::move(username)),

@@ -9,8 +9,8 @@ namespace fightdude {
  * @param createdAt Create timestamp
  * @param updatedAt Update timestamp
  */
-Selection::Selection(std::string id, std::string createdAt, std::string updatedAt)
-    : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)) {}
+Selection::Selection(std::string id)
+    : Entity(std::move(id)) {}
 
 /**
  * Destructor.

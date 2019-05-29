@@ -15,7 +15,7 @@ namespace fightdude {
  */
 class Selection : public Entity {
  public:
-  Selection(std::string id, std::string createdAt, std::string updatedAt);
+  Selection(std::string id);
   ~Selection() override;
 
  private:

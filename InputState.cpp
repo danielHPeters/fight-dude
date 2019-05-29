@@ -1,4 +1,4 @@
-#include "Input.h"
+#include "InputState.h"
 
 namespace fightdude {
 

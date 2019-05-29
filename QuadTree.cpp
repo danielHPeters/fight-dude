@@ -22,7 +22,7 @@ QuadTree<T>::QuadTree(
     std::uint8_t maxObjects,
     std::uint8_t maxLevels,
     uint8_t level
-) : hitBox(4, x, y, width, height), maxObjects(maxObjects), maxLevels(maxLevels), level(level) {}
+) : hitBox(x, y, width, height), maxObjects(maxObjects), maxLevels(maxLevels), level(level) {}
 
 /**
  * Destructor.

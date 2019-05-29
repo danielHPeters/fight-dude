@@ -1,7 +1,10 @@
 #ifndef FIGHT_DUDE_ENGINE_H
 #define FIGHT_DUDE_ENGINE_H
 
-#include "Input.h"
+#include <map>
+#include <string>
+#include "InputState.h"
+#include "Scene.h"
 
 namespace fightdude {
 /**
@@ -15,11 +18,16 @@ class Engine {
   Engine();
   ~Engine();
 
-  void start();
-  void update();
+  void start(int argc, char *argv[]);
+  void stop();
+  bool isRunning();
 
  private:
-  Input input;
+  bool running;
+  std::map<std::string, Scene<double>> states;
+  Scene<double> *currentState;
+
+  void update();
 };
 } //namespace fightdude
 

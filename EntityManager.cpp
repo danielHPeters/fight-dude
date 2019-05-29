@@ -10,7 +10,7 @@ EntityManager::EntityManager() : clock() {}
  * Destructor.
  */
 EntityManager::~EntityManager() {
-  std::for_each(gameEntities.begin(), gameEntities.end(), GameEntityDeallocator());
+  std::for_each(entities.begin(), entities.end(), GameEntityDeallocator());
 }
 
 /**
@@ -20,7 +20,7 @@ EntityManager::~EntityManager() {
  * @param gameEntity    Pointer to game entity
  */
 void EntityManager::add(const std::string &name, GameEntity *gameEntity) {
-  gameEntities.insert(std::pair<std::string, GameEntity *>(name, gameEntity));
+  entities.insert(std::pair<std::string, GameEntity *>(name, gameEntity));
 }
 
 /**
@@ -29,11 +29,11 @@ void EntityManager::add(const std::string &name, GameEntity *gameEntity) {
  * @param name  Entity name
  */
 void EntityManager::remove(const std::string &name) {
-  auto results = gameEntities.find(name);
+  auto results = entities.find(name);
 
-  if (results != gameEntities.end()) {
+  if (results != entities.end()) {
     delete results->second;
-    gameEntities.erase(results);
+    entities.erase(results);
   }
 }
 
@@ -44,9 +44,9 @@ void EntityManager::remove(const std::string &name) {
  * @return      The found entity or nullptr when not found
  */
 GameEntity *EntityManager::get(const std::string &name) const {
-  auto results = gameEntities.find(name);
+  auto results = entities.find(name);
 
-  return results == gameEntities.end() ? nullptr : results->second;
+  return results == entities.end() ? nullptr : results->second;
 }
 
 /**
@@ -55,7 +55,7 @@ GameEntity *EntityManager::get(const std::string &name) const {
  * @return Number of objects
  */
 std::size_t EntityManager::getObjectCount() const {
-  return gameEntities.size();
+  return entities.size();
 }
 
 /**
@@ -64,9 +64,9 @@ std::size_t EntityManager::getObjectCount() const {
  * @param renderWindow Window to render the entities on
  */
 void EntityManager::drawAll(sf::RenderWindow &renderWindow) {
-  auto iterator = gameEntities.begin();
+  auto iterator = entities.begin();
 
-  while (iterator != gameEntities.end()) {
+  while (iterator != entities.end()) {
     iterator->second->render(renderWindow);
     iterator++;
   }
@@ -76,11 +76,11 @@ void EntityManager::drawAll(sf::RenderWindow &renderWindow) {
  * Update all entities.
  */
 void EntityManager::updateAll() {
-  auto iterator = gameEntities.begin();
+  auto iterator = entities.begin();
 
   float elapsedTime = clock.getElapsedTime().asSeconds();
 
-  while (iterator != gameEntities.end()) {
+  while (iterator != entities.end()) {
     iterator->second->update(elapsedTime);
     iterator++;
   }

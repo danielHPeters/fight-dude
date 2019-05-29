@@ -15,8 +15,6 @@ class User : Entity {
  public:
   User(
       std::string id,
-      std::string createdAt,
-      std::string updatedAt,
       std::string name,
       std::string firstName,
       std::string username,

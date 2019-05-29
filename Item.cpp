@@ -5,22 +5,12 @@ namespace fightdude {
 /**
  *
  * @param id            Entity id
- * @param createdAt     Create timestamp
- * @param updatedAt     Update timestamp
  * @param fileName      Sprite filename
  * @param name          Item name
  * @param description   Item description
  */
-Item::Item(
-    std::string id,
-    std::string createdAt,
-    std::string updatedAt,
-    std::string fileName,
-    std::string name,
-    std::string description
-) : GameEntity(std::move(id), std::move(createdAt), std::move(updatedAt), std::move(fileName)),
-    name(std::move(name)),
-    description(std::move(description)) {}
+Item::Item(std::string id, std::string fileName, std::string name, std::string description)
+    : GameEntity(std::move(id), std::move(fileName)), name(std::move(name)), description(std::move(description)) {}
 
 /**
  * Destructor.

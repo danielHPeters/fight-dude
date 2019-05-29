@@ -11,8 +11,8 @@ namespace fightdude {
  * @param updatedAt Update timestamp
  * @param fileName  Sprite filename
  */
-Paddle::Paddle(std::string id, std::string createAt, std::string updatedAt, std::string fileName)
-    : GameEntity(std::move(id), std::move(createAt), std::move(updatedAt), std::move(fileName)),
+Paddle::Paddle(std::string id, std::string fileName)
+    : GameEntity(std::move(id), std::move(fileName)),
       velocity(0.0f),
       maxVelocity(600.0f),
       friction(0.9f) {

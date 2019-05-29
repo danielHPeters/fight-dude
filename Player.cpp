@@ -6,12 +6,9 @@ namespace fightdude {
  * Constructor.
  *
  * @param id        Entity id
- * @param createdAt Create timestamp
- * @param updatedAt Update timestamp
  * @param name      Player name
  */
-Player::Player(std::string id, std::string createdAt, std::string updatedAt, std::string name)
-    : Entity(std::move(id), std::move(createdAt), std::move(updatedAt)), name(std::move(name)) {}
+Player::Player(std::string id, std::string name): Entity(std::move(id)), name(std::move(name)) {}
 
 /**
  * Destructor.

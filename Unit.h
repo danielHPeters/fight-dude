@@ -17,7 +17,7 @@ class Unit : GameEntity {
     CAVALRY, INFANTRY, AIR, WATER, SIEGE, PEASANT
   };
 
-  Unit(std::string id, std::string createdAt, std::string updatedAt, std::string fileName, Unit::Type type);
+  Unit(std::string id, std::string fileName, Unit::Type type);
   ~Unit() override;
 
   void render(sf::RenderWindow &renderWindow) override;

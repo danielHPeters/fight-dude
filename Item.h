@@ -15,8 +15,6 @@ class Item : public GameEntity {
  public:
   Item(
       std::string id,
-      std::string createdAt,
-      std::string updatedAt,
       std::string fileName,
       std::string name,
       std::string description

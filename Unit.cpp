@@ -6,13 +6,11 @@ namespace fightdude {
  * Constructor.
  *
  * @param id        Entity id
- * @param createdAt Create timestamp
- * @param updatedAt Update timestamp
  * @param fileName  Sprite filename
  * @param type      Unit type
  */
-Unit::Unit(std::string id, std::string createdAt, std::string updatedAt, std::string fileName, Unit::Type type)
-    : GameEntity(std::move(id), std::move(createdAt), std::move(updatedAt), std::move(fileName)), type(type) {}
+Unit::Unit(std::string id, std::string fileName, Unit::Type type)
+    : GameEntity(std::move(id), std::move(fileName)), type(type) {}
 
 /**
  * Destructor.

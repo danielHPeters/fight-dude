@@ -13,17 +13,13 @@ namespace fightdude {
  */
 class Entity {
  public:
-  Entity(std::string id, std::string createdAt, std::string updatedAt);
+  explicit Entity(std::string id);
   virtual ~Entity();
 
   std::string getId() const;
-  std::string getCreatedAt() const;
-  std::string getUpdatedAt() const;
 
  private:
   std::string id;
-  std::string createdAt;
-  std::string updatedAt;
 };
 } //namespace fightdude
 

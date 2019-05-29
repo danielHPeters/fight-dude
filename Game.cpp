@@ -21,8 +21,8 @@ void Game::start() {
   if (gameState == Game::State::UNINITIALIZED) {
     mainWindow.create(sf::VideoMode(1024, 768, 32), "Fight Dude");
 
-    auto *ball = new Ball("1", "", "", "./../assets/game-objects/ball.png");
-    auto *player1 = new Paddle("2", "", "", "./../assets/game-objects/paddle.png");
+    auto *ball = new Ball("1", "./../assets/game-objects/ball.png");
+    auto *player1 = new Paddle("2", "./../assets/game-objects/paddle.png");
 
     player1->setPosition(sf::Vector2f((1024.0f / 2.0f) - 45.0f, 700.0f));
     ball->setPosition(sf::Vector2f(1024.0f / 2.0f, (768.0f / 2.0f) - 15.0f));

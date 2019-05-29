@@ -37,7 +37,7 @@ class EntityManager {
     }
   };
 
-  std::map<std::string, GameEntity *> gameEntities;
+  std::map<std::string, GameEntity *> entities;
   sf::Clock clock;
 };
 } //namespace fightdude

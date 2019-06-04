@@ -33,29 +33,19 @@ template<class T>
 inline Scene<T>::~Scene() = default;
 
 template<class T>
-inline void Scene<T>::update(T elapsedTime, InputState inputState) {
-
-}
+inline void Scene<T>::update(T elapsedTime, InputState inputState) {}
 
 template<class T>
-inline void Scene<T>::render() {
-
-}
+inline void Scene<T>::render() {}
 
 template<class T>
-inline void Scene<T>::onEnter() {
-
-}
+inline void Scene<T>::onEnter() {}
 
 template<class T>
-inline void Scene<T>::onExit() {
-
-}
+inline void Scene<T>::onExit() {}
 
 template<class T>
-inline void Scene<T>::addEntity(const std::string &name) {
-
-}
+inline void Scene<T>::addEntity(const std::string &name) {}
 } //namespace fightdude
 
 #endif //FIGHT_DUDE_SCENE_H

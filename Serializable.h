@@ -10,8 +10,7 @@ namespace fightdude {
  * @version 1.0
  */
 template<class T>
-class Serializable {
-};
+class Serializable {};
 } //namespace fightdude
 
 #endif //FIGHT_DUDE_SERIALIZABLE_H

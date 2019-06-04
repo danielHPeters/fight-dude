@@ -7,6 +7,7 @@
 namespace fightdude {
 template<class T>
 class Transformation : public Component {
+ private:
   Vector2<T> position;
   T rotation;
   T size;

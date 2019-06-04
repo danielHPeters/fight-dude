@@ -1,5 +1,5 @@
-//
-// Created by daniel on 29.05.19.
-//
-
 #include "EventDispatcher.h"
+
+namespace fightdude {
+void EventDispatcher::dispatchEvent(Event event) {}
+} //namespace fightdude

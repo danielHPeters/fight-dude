@@ -1,5 +1,10 @@
-//
-// Created by daniel on 29.05.19.
-//
-
 #include "Event.h"
+
+namespace fightdude {
+/**
+ * Constructor.
+ *
+ * @param type Event type
+ */
+Event::Event(Event::Type type) : type(type) {}
+} //namespace fightdude

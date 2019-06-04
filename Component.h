@@ -3,7 +3,9 @@
 
 namespace fightdude {
 class Component {
-
+ public:
+  Component();
+  ~Component();
 };
 } //namespace fightdude
 

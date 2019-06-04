@@ -5,7 +5,9 @@
 
 namespace fightdude {
 class Behaviour : public Component {
-
+ public:
+  Behaviour();
+  ~Behaviour();
 };
 } //namespace fightdude
 

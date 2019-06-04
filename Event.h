@@ -5,12 +5,20 @@
 #include <functional>
 
 namespace fightdude {
+/**
+ * Engine event class.
+ *
+ * @author Daniel Peters
+ * @version 1.0
+ */
 class Event {
  public:
   enum Type {
     UPDATE,
     RENDER
   };
+
+  explicit Event(Type type = Type::UPDATE);
  private:
   Type type;
 };

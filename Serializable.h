@@ -11,7 +11,6 @@ namespace fightdude {
  */
 template<class T>
 class Serializable {
-
 };
 } //namespace fightdude
 

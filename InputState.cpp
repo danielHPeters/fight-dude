@@ -14,7 +14,5 @@ bool InputState::isKeyDown(InputState::Key key) {
  *
  * @param key
  */
-void InputState::setKeyDown(InputState::Key key) {
-
-}
+void InputState::setKeyDown(InputState::Key key) {}
 } //namespace fightdude

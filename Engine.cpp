@@ -34,7 +34,5 @@ bool Engine::isRunning() {
   return this->running;
 }
 
-void Engine::update() {
-
-}
+void Engine::update() {}
 } //namespace fightdude

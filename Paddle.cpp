@@ -88,7 +88,7 @@ void Paddle::update(double elapsedTime) {
  *
  * @return Current velocity
  */
-double Paddle::getVelocity() const {
+float Paddle::getVelocity() const {
   return velocity;
 }
 } //namespace fightdude

@@ -19,12 +19,12 @@ class Paddle : public GameEntity {
 
   void render(sf::RenderWindow &renderWindow) override;
   void update(double elapsedTime) override;
-  double getVelocity() const;
+  float getVelocity() const;
 
  private:
-  double velocity;
-  double maxVelocity;
-  double friction;
+  float velocity;
+  float maxVelocity;
+  float friction;
 };
 } //namespace fightdude
 

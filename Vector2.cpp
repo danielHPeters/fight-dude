@@ -11,6 +11,8 @@ class Vector2<std::int16_t>;
 template
 class Vector2<std::int32_t>;
 template
+class Vector2<std::uint32_t>;
+template
 class Vector2<std::int64_t>;
 template
 class Vector2<float>;

@@ -19,13 +19,13 @@ class Window {
       Vector2<std::uint32_t> position,
       std::uint32_t width,
       std::uint32_t height,
-      Mode mode = Mode::WINDOWED
+      Mode mode = Window::Mode::WINDOWED
   );
 
   virtual void open() = 0;
   virtual void close() = 0;
   virtual void resize() = 0;
-  virtual void setMode(Window::Mode mode);
+  virtual void setMode(Mode mode);
 
  private:
   std::string title;
